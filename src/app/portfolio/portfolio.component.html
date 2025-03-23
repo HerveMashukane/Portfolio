@@ -93,18 +93,32 @@
     </div>
 </section>
 
-<!-- project section -->
- <section class="text-center font-bold pt-8">
+<!-- projects section -->
+<section class="text-center font-bold pt-8">
     <div>
         <h2 class="text-2xl text-primary">Projects</h2>
     </div>
-    <!-- project images -->
-    <div class="left-0 right-0 flex justify-center">
-        <span 
-        class="w-3 h-3 mx-1 cursor-pointer rounded-full"
-        *ngFor="let project of projects; let i = index"
-        [ngClass]="{'bg-accent': i !== currentIndex, 'bg-green-900': i === currentIndex}"
-        (click)="getProject(i)"
-        ></span>
+    <!-- caroussel -->
+    <div class="bg-primary md:w-[75%] mx-auto rounded-lg my-6 py-3 sm:w-full">
+
+        <!-- description && image -->
+        <div class="flex justify-around">
+            <!-- description -->
+            <p class="text-secondary content-center"> 
+                {{ projects[currentIndex].text }} 
+            </p>
+            <!-- images -->
+                <img [src]="projects[currentIndex].image" alt="" class="w-[40%] py-6">
+        </div>
+
+        <!-- navigaton dots to navigate in projects -->
+        <div class="left-0 right-0 flex justify-center">
+            <span 
+            class="w-3 h-3 mx-1 cursor-pointer rounded-full"
+            *ngFor="let project of projects; let i = index"
+            [ngClass]="{'bg-accent': i !== currentIndex, 'bg-green-900': i === currentIndex}"
+            (click)="getProject(i)"
+            ></span>
+        </div>
     </div>
- </section>
+</section>

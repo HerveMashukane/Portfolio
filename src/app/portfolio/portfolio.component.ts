@@ -12,23 +12,23 @@ import { CommonModule } from '@angular/common';
 export class PortfolioComponent {
   projects:any = [
     {
-      text: 'hello project one',
+      text: 'Students dashboard management',
       image: '/assets/images/studentDashboard.png',
     },
     {
-      text: 'hello project one',
+      text: 'foodie app for delicious food',
       image: '/assets/images/foodieApp.png',
     },
     {
-      text: 'hello project one',
+      text: 'a website temolate built in HTML & CSS',
       image: '/assets/images/website-template.png',
     },
     {
-      text: 'hello project one',
+      text: 'A todo application for tasks management',
       image: '/assets/images/todoApp.png',
     },
     {
-      text: 'hello project one',
+      text: 'a template for designing the inside of a house along with inputs form validation',
       image: '/assets/images/house-design.png',
     },
   ]
