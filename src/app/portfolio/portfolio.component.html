@@ -101,12 +101,17 @@
     <!-- caroussel -->
     <div class="bg-primary md:w-[75%] mx-auto rounded-lg my-6 py-3 sm:w-full">
 
-        <!-- description && image -->
+        <!-- text && image -->
         <div class="flex justify-around">
-            <!-- description -->
-            <p class="text-secondary content-center"> 
-                {{ projects[currentIndex].text }} 
-            </p>
+            <!-- text -->
+            <div class="text-white content-center text-sm font-normal w-[30%]">
+                <h2 class="text-secondary font-bold pb-4">
+                    {{ projects[currentIndex].title }}
+                </h2>
+                <p> 
+                    {{ projects[currentIndex].text }} 
+                </p>
+            </div>
             <!-- images -->
                 <img [src]="projects[currentIndex].image" alt="" class="w-[40%] py-6">
         </div>
@@ -116,7 +121,7 @@
             <span 
             class="w-3 h-3 mx-1 cursor-pointer rounded-full"
             *ngFor="let project of projects; let i = index"
-            [ngClass]="{'bg-accent': i !== currentIndex, 'bg-green-900': i === currentIndex}"
+            [ngClass]="{'bg-white': i !== currentIndex, 'bg-accent': i === currentIndex}"
             (click)="getProject(i)"
             ></span>
         </div>
