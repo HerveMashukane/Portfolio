@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 
 export class PortfolioComponent {
-  projects: any = [
+  projects:any = [
     {
       text: 'hello project one',
       image: '/assets/images/studentDashboard.png',
@@ -32,4 +32,10 @@ export class PortfolioComponent {
       image: '/assets/images/house-design.png',
     },
   ]
+
+  currentIndex = 0;
+
+  getProject(i: number) {
+    this.currentIndex = i;
+  }
 }
