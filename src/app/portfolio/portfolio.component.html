@@ -10,12 +10,22 @@
         <h2 
             class="text-primary text-3xl cursor-pointer font-bold tracking-wide shadow-xl hover:translate-x-3">
             Hervé
-
         </h2>
     </div>
 
+    <!-- menu button -->
+     <div *ngIf="isSmallScreen">
+        <button 
+            class="text-accent text-2xl"
+            [ngClass]="{'bi bi-x': isClicked, 'bi bi-list': !isClicked}"
+            (click)="toggleMenu()"
+        ></button>
+     </div>
+
     <!-- links -->
-    <div class="flex space-x-4">
+    <div 
+        class="flex space-x-4"
+        [class.hidden]="!isClicked && isSmallScreen">
         <a href="#" class="text-textPrimary hover:text-secondary">Home</a>
         <a href="#" class="text-textPrimary hover:text-secondary">About</a>
         <a href="#" class="text-textPrimary hover:text-secondary">Skills</a>
@@ -105,13 +115,16 @@
         <div class="flex justify-around">
             <!-- text -->
             <div class="text-white content-center text-sm font-normal w-[30%]">
-                <h2 class="text-secondary font-bold pb-4">
+                <h2 class="text-secondary text-xl font-bold pb-4">
                     {{ projects[currentIndex].title }}
                 </h2>
-                <p> 
+                <p class="mb-4"> 
                     {{ projects[currentIndex].text }} 
                 </p>
-                <a href="#"> {{ projects[currentIndex].btnText }} </a>
+                <a href="https://foodieapp2024.netlify.app/" 
+                    class="text-white bg-accent px-2 py-2 shadow-lg w-32 mx-auto rounded-xl hover:bg-red-600"> 
+                    {{ projects[currentIndex].btnText }} 
+                </a>
             </div>
             <!-- images -->
                 <img [src]="projects[currentIndex].image" alt="" class="w-[40%] py-6">

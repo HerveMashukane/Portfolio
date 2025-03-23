@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,6 +10,8 @@ import { CommonModule } from '@angular/common';
 })
 
 export class PortfolioComponent {
+  isClicked: boolean = false;
+  isSmallScreen: boolean = false;
   projects:any = [
     {
       id: 1,
@@ -47,7 +49,21 @@ export class PortfolioComponent {
       btnText: 'View Project'
     },
   ]
+  // check screen size
+  @HostListener('window: resize', [])
+  checkScreenSize() {
+    this.isSmallScreen = window.innerWidth < 760;
+  }
 
+  // toggle menu
+  toggleMenu() {
+    this.isClicked = !this.isClicked;
+    if(!this.isSmallScreen) {
+      this.isClicked = true;
+    }
+  }
+
+  // projects navigation
   currentIndex = 0;
 
   getProject(i: number) {
