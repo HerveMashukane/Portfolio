@@ -187,11 +187,27 @@
         Contact
     </h2>
     <form 
-        class="flex flex-col w-[40%] mx-auto space-y-4">
-            <input type="text" name="name" id="name" placeholder="Your Name" required
-                class="border border-gray-400 p-2 outline-none rounded">
-        <input type="email" name="email" id="email" placeholder="Your Email" required
-            class="border border-gray-400 p-2 outline-none rounded">
+    class="flex flex-col w-[40%] mx-auto space-y-4">
+
+    <!-- name input -->
+            <input 
+            class="border border-gray-400 p-2 outline-none rounded"
+            type="text" 
+            name="name" id="name" 
+            placeholder="Your Name" 
+            required 
+            pattern="[A-Za-z]+"
+            ngModel #name="ngModel">
+
+            <!-- email input -->
+            <input 
+            class="border border-gray-400 p-2 outline-none rounded"
+            type="email" 
+            name="email" id="email" 
+            placeholder="Your Email" 
+            required
+            ngModel #email="ngModel">
+
         <textarea name="message" id="message" placeholder="Type your message here..." required
             class="border border-gray-400 p-2 outline-none rounded"></textarea>
         <button type="submit"
