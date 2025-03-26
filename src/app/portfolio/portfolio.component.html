@@ -200,9 +200,17 @@
                 ngModel #name="ngModel">
                 <!-- name validation error -->
             <div *ngIf="name.touched && name.invalid">
+                <!-- required -->
                 <div 
+                    class="text-accent"
                     *ngIf="name.errors?.['required']">
                     Name is required
+                </div>
+                <!-- pattern -->
+                <div 
+                    class="text-accent"
+                    *ngIf="name.errors?.['pattern']">
+                    Name doesn't match the pattern
                 </div>
             </div>
 
