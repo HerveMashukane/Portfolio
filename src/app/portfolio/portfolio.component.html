@@ -191,26 +191,35 @@
 
     <!-- name input -->
             <input 
-            class="border border-gray-400 p-2 outline-none rounded"
-            type="text" 
-            name="name" id="name" 
-            placeholder="Your Name" 
-            required 
-            pattern="[A-Za-z]+"
-            ngModel #name="ngModel">
+                class="border border-gray-400 p-2 outline-none rounded"
+                type="text" 
+                name="name" id="name" 
+                placeholder="Your Name" 
+                required 
+                pattern="[A-Za-z]+"
+                ngModel #name="ngModel">
+                <!-- name validation error -->
+            <div *ngIf="name.touched && name.invalid">
+                <div 
+                    *ngIf="name.errors?.['required']">
+                    Name is required
+                </div>
+            </div>
 
             <!-- email input -->
             <input 
-            class="border border-gray-400 p-2 outline-none rounded"
-            type="email" 
-            name="email" id="email" 
-            placeholder="Your Email" 
-            required
-            ngModel #email="ngModel">
+                class="border border-gray-400 p-2 outline-none rounded"
+                type="email" 
+                name="email" id="email" 
+                placeholder="Your Email" 
+                required
+                ngModel #email="ngModel">
 
         <textarea name="message" id="message" placeholder="Type your message here..." required
             class="border border-gray-400 p-2 outline-none rounded"></textarea>
-        <button type="submit"
+        <button 
+            type="submit"
+            [disabled]=""
             class="text-white bg-primary py-2 rounded-lg">
             Send
         </button>
