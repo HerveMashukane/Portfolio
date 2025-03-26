@@ -1,10 +1,11 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.css'
 })
@@ -16,14 +17,14 @@ export class PortfolioComponent {
     {
       id: 1,
       title: 'HiroMate Dashboard',
-      text: 'A sample screenshot of an interactive, dynamic and responsive students dashboard built in Angular, TypeScript and Tailwind CSS, having a student form, displays their details, adds new students, removes, updates and saves them.',
+      text: 'A sample screenshot of an interactive, dynamic and responsive students dashboard built in Angular, TypeScript and Tailwind CSS, having a student form, adds new students, displays their details, removes, updates, toggle their status and saves them.',
       image: '/assets/images/studentDashboard.png',
       btnText: 'View Project'
     },
     {
       id: 2,
       title: 'Foodera',
-      text: 'A sample screenshot of an interactive Web application for food, built in Angular, TypeScript and Tailwind CSS, with a caroussel implementation for clients testmonials and responsive to multiple devices.',
+      text: 'A sample screenshot of an interactive Web application for food, built in Angular, TypeScript and Tailwind CSS, with a caroussel implementation for clients testmonials and responsive on multiple devices.',
       image: '/assets/images/foodieApp.png',
       btnText: 'View Project'
     },
@@ -43,7 +44,7 @@ export class PortfolioComponent {
     },
     {
       id: 5,
-      title: 'A sample screenshot of an interior House Design',
+      title: 'Interior House Design',
       text: 'A sample of a Website template for interior house designing services and products with inputs form validation built in HTML, CSS and JavaScript',
       image: '/assets/images/house-design.png',
       btnText: 'View Project'
@@ -65,8 +66,7 @@ export class PortfolioComponent {
 
   // projects navigation
   currentIndex = 0;
-
-  getProject(i: number) {
+  goToProject(i: number) {
     this.currentIndex = i;
   }
 }
