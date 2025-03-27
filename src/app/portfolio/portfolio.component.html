@@ -3,22 +3,28 @@
 <!-- font awesome link -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-<!-- Navbar links -->
+<!-- navbar -->
 <nav class="flex justify-between px-8 py-4">
-    <!-- Logo -->
+    <!-- logo -->
     <div>
         <h2 class="text-primary text-3xl cursor-pointer font-bold tracking-wide shadow-xl hover:translate-x-3">
             Hervé
         </h2>
     </div>
 
-    <!-- Menu Button (for mobile view) -->
+    <!-- menu btn (only dispayed on sm screens) -->
     <div *ngIf="isSmallScreen">
-        <button class="text-accent text-2xl" [ngClass]="{'bi bi-x': isClicked, 'bi bi-list': !isClicked}" (click)="toggleMenu()"></button>
+        <button 
+            class="text-accent text-2xl" 
+            [ngClass]="{'bi bi-x': isClicked, 'bi bi-list': !isClicked}"
+            (click)="toggleMenu()">
+        </button>
     </div>
 
-    <!-- Links -->
-    <div class="flex space-x-4" [class.hidden]="!isClicked && isSmallScreen">
+    <!-- links -->
+    <div 
+        class="flex space-x-4" 
+        [class.hidden]="!isClicked && isSmallScreen">
         <a href="#" class="text-textPrimary hover:text-secondary">Home</a>
         <a href="#" class="text-textPrimary hover:text-secondary">About</a>
         <a href="#" class="text-textPrimary hover:text-secondary">Skills</a>
