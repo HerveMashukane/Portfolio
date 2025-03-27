@@ -115,7 +115,7 @@
     </div>
 </section>
 
-<!-- Connect Section -->
+<!-- connect Section -->
 <section>
     <div>
         <div class="flex flex-col justify-center">
@@ -128,35 +128,67 @@
             </span>
         </div>
         <div class="flex justify-center space-x-4 text-primary text-xl">
+            <!-- linkedin -->
             <span class="cursor-pointer">
-                <a href="https://www.linkedin.com/in/herv%C3%A9-mashukane-9b104b304/" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/herv%C3%A9-mashukane-9b104b304/" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-linkedin"></i>
+                </a>
             </span>
+            <!-- email -->
             <span class="cursor-pointer">
-                <a href="mailto:hervemashukane@gmail.com?subject=Inquiry from Your Website" target="_blank"><i class="bi bi-envelope-fill"></i></a>
+                <a href="mailto:hervemashukane@gmail.com?subject=Inquiry from Your Website" target="_blank">
+                    <i class="bi bi-envelope-fill"></i>
+                </a>
             </span>
+            <!-- twitter -->
             <span class="cursor-pointer">
-                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#">
+                    <i class="bi bi-twitter"></i>
+                </a>
             </span>
         </div>
     </div>
 </section>
 
-<!-- Contact Section -->
+<!-- contact Section -->
 <section class="py-8">
     <h2 class="text-primary text-center text-2xl font-bold pb-4">Contact</h2>
     <form class="flex flex-col w-full sm:w-[70%] md:w-[40%] mx-auto space-y-4">
-        <input class="border border-gray-400 p-2 outline-none rounded" type="text" name="name" id="name" placeholder="Your Name" required pattern="[A-Za-z]+" ngModel #name="ngModel">
+        <!-- name -->
+        <input 
+            class="border border-gray-400 p-2 outline-none rounded" 
+            type="text" name="name" id="name" placeholder="Your Name" 
+            required pattern="[A-Za-z]+" 
+            ngModel 
+            #name="ngModel">
+            <!-- name validation error -->
         <div *ngIf="name.touched && name.invalid">
             <div class="text-accent" *ngIf="name.errors?.['required']">Name is required</div>
             <div class="text-accent" *ngIf="name.errors?.['pattern']">Name doesn't match the pattern</div>
         </div>
-        <input class="border border-gray-400 p-2 outline-none rounded" type="email" name="email" id="email" placeholder="Your Email" required ngModel #email="ngModel">
+        <!-- email -->
+        <input 
+            class="border border-gray-400 p-2 outline-none rounded" 
+            type="email" name="email" id="email" 
+            placeholder="Your Email" 
+            required 
+            ngModel 
+            #email="ngModel">
+            <!-- email validation error -->
+             <div *ngIf="email.touched && email.invalid">
+                <div *ngIf="email.errors?.['required']" class="text-accent">
+                    Email is required
+                </div>
+                <div *ngIf="email.errors?.['email']">
+                    Enter a valid email
+                </div>
+             </div>
         <textarea name="message" id="message" placeholder="Type your message here..." required class="border border-gray-400 p-2 outline-none rounded"></textarea>
         <button type="submit" class="text-white bg-primary py-2 rounded-lg">Send</button>
     </form>
 </section>
 
-<!-- Footer Section -->
+<!-- footer Section -->
 <section class="bg-gray-700 text-white h-32 content-center">
     <div class="text-center">
         <p>
