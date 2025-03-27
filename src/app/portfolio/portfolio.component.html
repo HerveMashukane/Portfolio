@@ -89,7 +89,7 @@
     <div class="bg-primary md:w-[75%] mx-auto rounded-lg my-6 py-3 sm:w-full">
         <div class="flex flex-col sm:flex-row justify-around items-center sm:items-start">
             <div class="text-white content-center text-sm font-normal w-full sm:w-[40%] px-4 sm:px-0">
-                <h2 class="text-secondary text-xl font-bold pb-4 sm:text-2xl md:text-3xl">
+                <h2 class="text-secondary text-xl font-bold py-4 sm:text-2xl md:text-3xl">
                     {{ projects[currentIndex].title }}
                 </h2>
                 <p class="mb-4 sm:text-base md:text-lg">
@@ -150,7 +150,7 @@
     </div>
 </section>
 
-<!-- contact Section -->
+<!-- contact section -->
 <section class="py-8">
     <h2 class="text-primary text-center text-2xl font-bold pb-4">Contact</h2>
     <form class="flex flex-col w-full sm:w-[70%] md:w-[40%] mx-auto space-y-4">
@@ -158,7 +158,8 @@
         <input 
             class="border border-gray-400 p-2 outline-none rounded" 
             type="text" name="name" id="name" placeholder="Your Name" 
-            required pattern="[A-Za-z]+" 
+            required 
+            pattern="[A-Za-z]+" 
             ngModel 
             #name="ngModel">
             <!-- name validation error -->
@@ -183,8 +184,17 @@
                     Enter a valid email
                 </div>
              </div>
-        <textarea name="message" id="message" placeholder="Type your message here..." required class="border border-gray-400 p-2 outline-none rounded"></textarea>
-        <button type="submit" class="text-white bg-primary py-2 rounded-lg">Send</button>
+        <textarea 
+            name="message" id="message" 
+            placeholder="Type your message here..." 
+            required 
+            class="border border-gray-400 p-2 outline-none rounded">
+        </textarea>
+        <button 
+            type="submit" 
+            class="text-white bg-primary py-2 rounded-lg">
+            Send
+        </button>
     </form>
 </section>
 
@@ -192,7 +202,8 @@
 <section class="bg-gray-700 text-white h-32 content-center">
     <div class="text-center">
         <p>
-            Copyright&copy; Designed by <span class="text-primary"><i class="bi bi-heart-fill"></i></span> Hervé Mashukane. All rights reserved.
+            Copyright&copy; Designed by <span class="text-primary"><i class="bi bi-heart-fill"></i></span> 
+            Hervé Mashukane. All rights reserved.
         </p>
     </div>
 </section>

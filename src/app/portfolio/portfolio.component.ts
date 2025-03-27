@@ -17,7 +17,7 @@ export class PortfolioComponent {
     {
       id: 1,
       title: 'HiroMate Dashboard',
-      text: 'A sample screenshot of an interactive, dynamic and responsive students dashboard built in Angular, TypeScript and Tailwind CSS, having a student form, adds new students, displays their details, removes, updates, toggle their status and saves them.',
+      text: 'A sample screenshot of an interactive, dynamic and responsive students dashboard of a company named HiroMate, built in Angular, TypeScript and Tailwind CSS, having a student form, adds new students, displays their details, removes, updates, toggle their status and saves them.',
       image: '/assets/images/studentDashboard.png',
       btnText: 'View Project'
     },
