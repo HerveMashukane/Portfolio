@@ -77,7 +77,7 @@ export class PortfolioComponent {
   @ViewChild('contact') contactSection!: ElementRef;
 
   // scroll behaviour
-  // scrollToSection(section: ElementRef) {
-  //   section.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  // }
+  scrollToSection(section: ElementRef) {
+    section.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
 }
