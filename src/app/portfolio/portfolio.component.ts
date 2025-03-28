@@ -73,7 +73,7 @@ export class PortfolioComponent {
   @ViewChild('home') homeSection!: ElementRef;
   @ViewChild('about') aboutSection!: ElementRef;
   @ViewChild('skills') skillsSection!: ElementRef;
-  @ViewChild('projects') projectsSection!: ElementRef;
+  @ViewChild('projcts') projectsSection!: ElementRef;
   @ViewChild('contact') contactSection!: ElementRef;
 
   // scroll behaviour

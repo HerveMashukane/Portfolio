@@ -25,18 +25,26 @@
     <div 
         class="flex space-x-4" 
         [class.hidden]="!isClicked && isSmallScreen">
-        <a  class="text-textPrimary hover:text-secondary">
+        <a (click)="scrollToSection(homeSection)" class="text-textPrimary hover:text-secondary">
             Home
         </a>
-        <a  class="text-textPrimary hover:text-secondary">About</a>
-        <a  class="text-textPrimary hover:text-secondary">Skills</a>
-        <a  class="text-textPrimary hover:text-secondary">Projects</a>
-        <a class="text-textPrimary hover:text-secondary">Contact</a>
+        <a (click)="scrollToSection(aboutSection)" class="text-textPrimary hover:text-secondary">
+            About
+        </a>
+        <a (click)="scrollToSection(skillsSection)" class="text-textPrimary hover:text-secondary">
+            Skills
+        </a>
+        <a (click)="scrollToSection(projectsSection)" class="text-textPrimary hover:text-secondary">
+            Projects
+        </a>
+        <a (click)="scrollToSection(contactSection)" class="text-textPrimary hover:text-secondary">
+            Contact
+        </a>
     </div>
 </nav>
 
 <!-- home Section -->
-<section class="flex flex-col bg-cover bg-center bg-no-repeat bg-[url('/assets/images/computer.jpg')] h-[300px]">
+<section #home class="flex flex-col bg-cover bg-center bg-no-repeat bg-[url('/assets/images/computer.jpg')] h-[300px]">
     <div class="flex flex-col text-center content-center space-y-4 py-8">
         <h2 class="text-white mx-auto text-2xl font-bold md:w-[500px]">
             Hello <span class="text-secondary"><i class="fas fa-hand"></i></span> <br>
@@ -52,8 +60,8 @@
     </div>
 </section>
 
-<!-- about Section -->
-<section id="about-section" class="py-8 text-center mb-8 bg-gray-200 shadow-2xl">
+<!-- about section -->
+<section #about class="py-8 text-center mb-8 bg-gray-200 shadow-2xl">
     <div class="py-4 text-2xl text-primary font-bold">
         <h2>About Me</h2>
     </div>
@@ -66,7 +74,7 @@
 </section>
 
 <!-- skills Section -->
-<section id="skills-section" class="text-center space-y-8 py-8">
+<section #skills class="text-center space-y-8 py-8">
     <div>
         <h2 class="text-2xl text-primary font-bold">Skills</h2>
     </div>
@@ -81,7 +89,7 @@
 </section>
 
 <!-- projects section -->
-<section id="about" class="text-center font-bold pt-8">
+<section #projcts class="text-center font-bold pt-8">
     <div>
         <h2 class="text-2xl text-primary">
             Projects
