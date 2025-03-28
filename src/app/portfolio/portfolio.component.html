@@ -25,16 +25,16 @@
     <div 
         class="flex space-x-4" 
         [class.hidden]="!isClicked && isSmallScreen">
-        <a href="#" class="text-textPrimary hover:text-secondary">Home</a>
-        <a href="#" class="text-textPrimary hover:text-secondary">About</a>
-        <a href="#" class="text-textPrimary hover:text-secondary">Skills</a>
-        <a href="#" class="text-textPrimary hover:text-secondary">Projects</a>
-        <a href="#" class="text-textPrimary hover:text-secondary">Contact</a>
+        <a href="#home-section" class="text-textPrimary hover:text-secondary">Home</a>
+        <a href="#about-section" class="text-textPrimary hover:text-secondary">About</a>
+        <a href="#skills-section" class="text-textPrimary hover:text-secondary">Skills</a>
+        <a href="#projects-section" class="text-textPrimary hover:text-secondary">Projects</a>
+        <a href="#contact-section" class="text-textPrimary hover:text-secondary">Contact</a>
     </div>
 </nav>
 
 <!-- home Section -->
-<section class="flex flex-col bg-cover bg-center bg-no-repeat bg-[url('/assets/images/computer.jpg')] h-[300px]">
+<section id="home-section" class="flex flex-col bg-cover bg-center bg-no-repeat bg-[url('/assets/images/computer.jpg')] h-[300px]">
     <div class="flex flex-col text-center content-center space-y-4 py-8">
         <h2 class="text-white mx-auto text-2xl font-bold md:w-[500px]">
             Hello <span class="text-secondary"><i class="fas fa-hand"></i></span> <br>
@@ -51,7 +51,7 @@
 </section>
 
 <!-- about Section -->
-<section class="py-8 text-center mb-8 bg-gray-200 shadow-2xl">
+<section id="about-section" class="py-8 text-center mb-8 bg-gray-200 shadow-2xl">
     <div class="py-4 text-2xl text-primary font-bold">
         <h2>About Me</h2>
     </div>
@@ -64,7 +64,7 @@
 </section>
 
 <!-- skills Section -->
-<section class="text-center space-y-8 py-8">
+<section id="skills-section" class="text-center space-y-8 py-8">
     <div>
         <h2 class="text-2xl text-primary font-bold">Skills</h2>
     </div>
@@ -79,7 +79,7 @@
 </section>
 
 <!-- projects section -->
-<section class="text-center font-bold pt-8">
+<section id="projects-section" class="text-center font-bold pt-8">
     <div>
         <h2 class="text-2xl text-primary">
             Projects
@@ -151,7 +151,7 @@
 </section>
 
 <!-- contact section -->
-<section class="py-8">
+<section id="contact-section" class="py-8">
     <h2 class="text-primary text-center text-2xl font-bold pb-4">Contact</h2>
     <form class="flex flex-col w-full sm:w-[70%] md:w-[40%] mx-auto space-y-4">
         <!-- name -->
