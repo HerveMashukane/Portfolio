@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, viewChild, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -69,4 +69,15 @@ export class PortfolioComponent {
   goToProject(i: number) {
     this.currentIndex = i;
   }
+
+  @ViewChild('home') homeSection!: ElementRef;
+  @ViewChild('about') aboutSection!: ElementRef;
+  @ViewChild('skills') skillsSection!: ElementRef;
+  @ViewChild('projects') projectsSection!: ElementRef;
+  @ViewChild('contact') contactSection!: ElementRef;
+
+  // scroll behaviour
+  // scrollToSection(section: ElementRef) {
+  //   section.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  // }
 }
