@@ -37,13 +37,6 @@ export class PortfolioComponent {
     },
     {
       id: 4,
-      title: 'To-Do Application',
-      text: 'Screenshot of a to-do list application for tasks management built in HTML, CSS and JavaScript.',
-      image: '/assets/images/todoApp.png',
-      btnText: 'View Project'
-    },
-    {
-      id: 5,
       title: 'Interior House Design',
       text: 'A sample of a Website template for interior house designing services and products with inputs form validation built in HTML, CSS and JavaScript',
       image: '/assets/images/house-design.png',
