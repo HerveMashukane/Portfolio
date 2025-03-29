@@ -54,7 +54,9 @@
             I'm a Front-End Developer<span class="text-primary"><i class="bi bi-laptop-fill"></i></span>,
             I create engaging, user-friendly web applications with modern technologies like Angular, TypeScript, and more...
         </p>
-        <button class="text-white bg-primary px-2 py-2 shadow-lg w-32 mx-auto rounded-xl hover:bg-blue-800">
+        <button 
+            (click)="scrollToSection(projectsSection)"
+            class="text-white bg-primary px-2 py-2 shadow-lg w-32 mx-auto rounded-xl hover:bg-blue-800">
             View Projects
         </button>
     </div>
