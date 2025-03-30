@@ -7,7 +7,8 @@
 <nav class="flex justify-between px-8 py-4">
     <!-- logo -->
     <div>
-        <h2 class="text-primary text-3xl cursor-pointer font-bold tracking-wide shadow-xl hover:translate-x-3">
+        <h2 *ngIf="!isClicked"
+            class="text-primary text-3xl cursor-pointer font-bold tracking-wide shadow-xl hover:translate-x-3">
             Hervé
         </h2>
     </div>
@@ -15,7 +16,7 @@
     <!-- menu btn (only dispayed on sm screens) -->
     <div *ngIf="isSmallScreen">
         <button 
-            class="text-accent text-2xl" 
+            class="text-primary text-2xl" 
             [ngClass]="{'bi bi-x': isClicked, 'bi bi-list': !isClicked}"
             (click)="toggleMenu()">
         </button>
@@ -23,7 +24,7 @@
 
     <!-- links -->
     <div 
-        class="flex space-x-4" 
+        class="md:flex space-x-4" 
         [class.hidden]="!isClicked && isSmallScreen">
         <a (click)="scrollToSection(homeSection)" 
             class="text-textPrimary hover:text-secondary cursor-pointer">
