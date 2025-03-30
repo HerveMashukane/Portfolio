@@ -57,18 +57,18 @@ export class PortfolioComponent {
     }
   }
 
-  // projects navigation
+  // projects dots navigation
   currentIndex = 0;
   goToProject(i: number) {
     this.currentIndex = i;
   }
 
-  // previous project
+  // previous projects navigation
   previousProject() {
     this.currentIndex = (this.currentIndex -1 + this.projects.length) % this.projects.length;
   }
 
-  // next project
+  // next projects navigation
   nextProject() {
     this.currentIndex = (this.currentIndex + 1) % this.projects.length;
   }
