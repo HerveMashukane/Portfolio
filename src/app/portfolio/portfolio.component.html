@@ -104,15 +104,15 @@
         </h2>
     </div>
 
-    <div class="bg-primary md:w-[75%] mx-auto rounded-lg my-6 py-3 sm:w-full">
-        <!-- left && right icons -->
-        <div class="float-right m-4 text-secondary">
+    <div class="bg-primary md:w-[75%] mx-auto rounded-lg my-6 py-3 sm:w-full relative">
+        <!-- left & right icons -->
+        <div class="absolute top-1/2 w-full flex justify-between px-4 text-secondary">
             <!-- left icon -->
-            <span class="text-lg cursor-pointer">
+            <span class="text-lg cursor-pointer" (click)="previousProject()">
                 <i class="bi bi-chevron-double-left"></i>
             </span>
-                        <!-- right icon -->
-            <span class="text-lg cursor-pointer">
+            <!-- right icon -->
+            <span class="text-lg cursor-pointer" (click)="nextProject()">
                 <i class="bi bi-chevron-double-right"></i>
             </span>
         </div>
@@ -133,6 +133,7 @@
             <!-- projects screenshots -->
             <img [src]="projects[currentIndex].image" alt="" class="w-[80%] sm:w-[40%] py-6 mx-auto sm:mx-0">
         </div>
+
         <!-- navigation dots -->
         <div class="left-0 right-0 flex justify-center py-4">
             <span class="w-3 h-3 mx-1 cursor-pointer rounded-full" 
