@@ -65,7 +65,7 @@ export class PortfolioComponent {
 
   // previous projects navigation
   previousProject() {
-    this.currentIndex = (this.currentIndex -1 + this.projects.length) % this.projects.length;
+    this.currentIndex = (this.currentIndex - 1 + this.projects.length) % this.projects.length;
   }
 
   // next projects navigation
