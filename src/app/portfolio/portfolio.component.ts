@@ -63,6 +63,11 @@ export class PortfolioComponent {
     this.currentIndex = i;
   }
 
+  // previous project
+  previousProject() {
+    this.currentIndex = (this.currentIndex -1 + this.projects.length) % this.projects.length;
+  }
+
   @ViewChild('home') homeSection!: ElementRef;
   @ViewChild('about') aboutSection!: ElementRef;
   @ViewChild('skills') skillsSection!: ElementRef;
