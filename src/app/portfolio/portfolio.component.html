@@ -49,7 +49,7 @@
     </div>
 </nav>
 
-<!-- home Section -->
+<!-- home section -->
 <section #home class="flex flex-col bg-cover bg-center bg-no-repeat bg-[url('/assets/images/computer.jpg')] h-[300px]">
     <div class="flex flex-col text-center content-center space-y-4 py-8">
         <h2 class="text-white mx-auto text-2xl font-bold md:w-[500px]">
@@ -105,12 +105,23 @@
     </div>
 
     <div class="bg-primary md:w-[75%] mx-auto rounded-lg my-6 py-3 sm:w-full">
+        <!-- left && right icons -->
+        <div class="float-right m-4 text-secondary">
+            <!-- left icon -->
+            <span class="text-lg cursor-pointer">
+                <i class="bi bi-chevron-double-left"></i>
+            </span>
+                        <!-- right icon -->
+            <span class="text-lg cursor-pointer">
+                <i class="bi bi-chevron-double-right"></i>
+            </span>
+        </div>
         <div class="flex flex-col sm:flex-row justify-around items-center sm:items-start">
             <div class="text-white content-center text-sm font-normal w-full sm:w-[40%] px-4 sm:px-0">
                 <h2 class="text-secondary text-xl font-bold py-4 sm:text-2xl md:text-3xl">
                     {{ projects[currentIndex].title }}
                 </h2>
-                <p class="mb-4 sm:text-base md:text-lg">
+                <p class="mb-4 px-8 sm:text-base md:text-[17px]">
                     {{ projects[currentIndex].text }}
                 </p>
                 <a href="https://foodieapp2024.netlify.app/" target="_blank" rel="noopener noreferrer"
