@@ -124,7 +124,7 @@
                 <p class="mb-4 px-8 sm:text-base md:text-[17px]">
                     {{ projects[currentIndex].text }}
                 </p>
-                <a href="https://foodieapp2024.netlify.app/" target="_blank" rel="noopener noreferrer"
+                <a [href]="projects[currentIndex].link" target="_blank" rel="noopener noreferrer"
                     class="text-white bg-accent px-4 py-2 shadow-lg w-32 mx-auto rounded-xl hover:bg-red-600">
                     {{ projects[currentIndex].btnText }}
                 </a>
