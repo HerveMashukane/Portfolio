@@ -28,20 +28,28 @@ export class PortfolioComponent {
       image: '/assets/images/foodieApp.png',
       btnText: 'View Project'
     },
+    {
+      id: 3,
+      title: 'Portfolio',
+      text: 'Screenshot of a fully responsive personal portfolio built in Angular, TypeScript and Tailwind CSS.',
+      image: '/assets/images/portfolio.png',
+      btnText: 'View Project'
+    },
     // {
-    //   id: 3,
+    //   id: 4,
     //   title: 'WebDev',
     //   text: 'Screenshot of a responsive website template built in HTML & CSS for web design and development courses.',
     //   image: '/assets/images/website-template.png',
     //   btnText: 'View Project'
     // },
     // {
-    //   id: 4,
+    //   id: 5,
     //   title: 'Interior House Design',
     //   text: 'A sample of a Website template for interior house designing services and products with inputs form validation built in HTML, CSS and JavaScript',
     //   image: '/assets/images/house-design.png',
     //   btnText: 'View Project'
     // },
+
   ]
   // check screen size
   @HostListener('window: resize', [])
