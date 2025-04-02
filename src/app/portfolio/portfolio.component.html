@@ -50,13 +50,13 @@
 </nav>
 
 <!-- home section -->
-<section #home class="flex flex-col bg-cover bg-center bg-no-repeat bg-[url('/assets/images/computer.jpg')] h-[300px]">
-    <div class="flex flex-col text-center content-center space-y-4 py-8">
-        <h2 class="text-white mx-auto text-2xl font-bold md:w-[500px]">
+<section #home class="flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat bg-[url('/assets/images/computer.jpg')] md:h-[500px] sm:h-[350px]">
+    <div class="flex flex-col items-center text-center space-y-4 py-8">
+        <h2 class="text-white text-2xl font-bold md:w-[500px]">
             Hello <span class="text-secondary"><i class="fas fa-hand"></i></span> <br>
             I am Hervé Mashukane. <br> Glad to see <span class="text-primary"><i class="bi bi-eye-fill"></i></span> you!
         </h2>
-        <p class="text-white text-[16px] mx-auto md:w-[400px]">
+        <p class="text-white md:text-lg md:w-[600px]">
             I'm a Front-End Developer<span class="text-primary"><i class="bi bi-laptop-fill"></i></span>,
             I create engaging, user-friendly web applications with modern technologies like Angular, TypeScript, and more...
         </p>
@@ -69,12 +69,12 @@
 </section>
 
 <!-- about section -->
-<section #about class="py-8 text-center mb-8 bg-gray-200 shadow-2xl">
-    <div class="py-4 text-2xl text-primary font-bold">
-        <h2>About Me</h2>
+<section #about class="py-8 text-center content-center mb-8 bg-gray-200 shadow-2xl md:h-[400px] sm:h-[250px]">
+    <div class="py-4 text-xl text-primary font-bold items-center">
+        <h2 class="text-xl md:text-2xl">About Me</h2>
     </div>
     <div>
-        <p class="md:w-[750px] mx-auto sm:w-[300px] px-4">
+        <p class="md:w-[750px] md:text-lg mx-auto text-base sm:w-[300px] px-4">
             I am a Web Developer | Front-End Enthusiast | Proficient in JavaScript, TypeScript, Angular, HTML, CSS, and Tailwind CSS. 
             Building User-Centered Applications | Fast Learner and committed to Adapting and Growing in Tech.
         </p>
@@ -82,9 +82,9 @@
 </section>
 
 <!-- skills Section -->
-<section #skills class="text-center space-y-8 py-8">
+<section #skills class="py-8 text-center content-center mb-8 bg-gray-200 shadow-2xl md:h-[400px] sm:h-[250px]">
     <div>
-        <h2 class="text-2xl text-primary font-bold">Skills</h2>
+        <h2 class="text-xl md:text-2xl text-primary font-bold">Skills</h2>
     </div>
     <div class="grid grid-cols-3 gap-4 text-xl text-textPrimary">
         <h2>HTML <div class="w-32 h-1 mx-auto bg-primary mt-2"></div></h2>
@@ -97,9 +97,9 @@
 </section>
 
 <!-- projects section -->
-<section #projcts class="text-center font-bold pt-8">
+<section #projcts class="py-8 text-center content-center mb-8 bg-gray-200 shadow-2xl md:h-[400px] sm:h-[250px]">
     <div>
-        <h2 class="text-2xl text-primary">
+        <h2 class="text-xl md:text-2xl text-primary font-bold">
             Projects
         </h2>
     </div>
@@ -118,7 +118,7 @@
         </div>
         <div class="flex flex-col sm:flex-row justify-around items-center sm:items-start">
             <div class="text-white content-center text-sm font-normal w-full sm:w-[40%] px-4 sm:px-0">
-                <h2 class="text-secondary text-xl font-bold py-4 sm:text-2xl md:text-3xl">
+                <h2 class="text-white text-xl font-bold py-4 sm:text-2xl md:text-3xl">
                     {{ projects[currentIndex].title }}
                 </h2>
                 <p class="mb-4 px-8 sm:text-base md:text-[17px]">
@@ -146,7 +146,7 @@
 </section>
 
 <!-- connect Section -->
-<section>
+<section class="md:h-[400px] sm:h-[250px]">
     <div>
         <div class="flex flex-col justify-center">
             <button class="text-white bg-accent px-2 py-2 mt-4 shadow-lg w-32 mx-auto rounded-xl hover:bg-red-600">
@@ -159,19 +159,19 @@
         </div>
         <div class="flex justify-center space-x-4 text-primary text-xl">
             <!-- linkedin -->
-            <span class="cursor-pointer">
+            <span class="cursor-pointer hover:-translate-y-1/4">
                 <a href="https://www.linkedin.com/in/herv%C3%A9-mashukane-9b104b304/" target="_blank" rel="noopener noreferrer">
                     <i class="bi bi-linkedin"></i>
                 </a>
             </span>
             <!-- email -->
-            <span class="cursor-pointer">
+            <span class="cursor-pointer hover:-translate-y-1/4">
                 <a href="mailto:hervemashukane@gmail.com?subject=Inquiry from Your Website" target="_blank">
                     <i class="bi bi-envelope-fill"></i>
                 </a>
             </span>
             <!-- twitter -->
-            <span class="cursor-pointer">
+            <span class="cursor-pointer hover:-translate-y-1/4">
                 <a href="https://www.linkedin.com/in/herv%C3%A9-mashukane-9b104b304/" target="_blank" rel="noopener noreferrer">
                     <i class="bi bi-twitter"></i>
                 </a>
@@ -181,8 +181,8 @@
 </section>
 
 <!-- contact section -->
-<section #contact class="py-8">
-    <h2 class="text-primary text-center text-2xl font-bold pb-4">Contact</h2>
+<section #contact class="py-8 text-center content-center mb-8 bg-gray-200 shadow-2xl md:h-[400px] sm:h-[250px]">
+    <h2 class="text-primary text-xl md:text-2xl text-center font-bold pb-4">Contact</h2>
     <form class="flex flex-col w-full sm:w-[70%] md:w-[40%] mx-auto space-y-4">
         <!-- name -->
         <input 
@@ -230,38 +230,56 @@
 </section>
 
 <!-- footer Section -->
-<section class="bg-gray-700 text-white h-48 content-center space-y-4">
-    <div class="text-center">
-        <p>Let's get connected on</p>
-    <span class="text-[30px] text-white text-center">
-        <i class="bi bi-arrow-down"></i>
-    </span>
+<section class="bg-gray-700 text-white h-72 content-center space-y-10">
+    <!-- a copy of navbar links -->
+    <div class="space-x-4 text-center">
+        <a (click)="scrollToSection(homeSection)" 
+            class="text-white hover:text-secondary cursor-pointer">
+            Home
+        </a>
+        <a (click)="scrollToSection(aboutSection)" 
+            class="text-white hover:text-secondary cursor-pointer">
+            About
+        </a>
+        <a (click)="scrollToSection(skillsSection)" 
+            class="text-white hover:text-secondary cursor-pointer">
+            Skills
+        </a>
+        <a (click)="scrollToSection(projectsSection)" 
+            class="text-white hover:text-secondary cursor-pointer">
+            Projects
+        </a>
+        <a (click)="scrollToSection(contactSection)" 
+            class="text-white hover:text-secondary cursor-pointer">
+            Contact
+        </a>
     </div>
     <div class="flex justify-center space-x-4 text-white text-xl">
         <!-- linkedin -->
-        <span class="cursor-pointer">
-            <a href="https://www.linkedin.com/in/herv%C3%A9-mashukane-9b104b304/" target="_blank" rel="noopener noreferrer">
+        <span class="cursor-pointer hover:-translate-y-1/4">
+            <a href="https://www.linkedin.com/in/herv%C3%A9-mashukane-9b104b304/" t
+                arget="_blank" rel="noopener noreferrer">
                 <i class="bi bi-linkedin"></i>
             </a>
         </span>
         <!-- email -->
-        <span class="cursor-pointer">
-            <a href="mailto:hervemashukane@gmail.com?subject=Inquiry from Your Website" target="_blank">
+        <span class="cursor-pointer hover:-translate-y-1/4">
+            <a href="mailto:hervemashukane@gmail.com?subject=Inquiry from Your Website" 
+                target="_blank">
                 <i class="bi bi-envelope-fill"></i>
             </a>
         </span>
         <!-- twitter -->
-        <span class="cursor-pointer">
+        <span class="cursor-pointer hover:-translate-y-1/4">
             <a href="https://www.linkedin.com/in/herv%C3%A9-mashukane-9b104b304/" target="_blank" rel="noopener noreferrer">
                 <i class="bi bi-twitter"></i>
             </a>
         </span>
     </div>
-
     <div class="text-center">
         <p>
             &copy;2025. Designed by <span class="text-primary"><i class="bi bi-heart-fill"></i></span> 
-            Hervé Mashukane. All rights reserved.
+            Hervé Mashukane | All rights reserved.
         </p>
     </div>
 </section>
