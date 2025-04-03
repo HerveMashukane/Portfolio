@@ -112,21 +112,15 @@ export class PortfolioComponent {
     else if(this.name?.hasError('pattern')){
       return 'Name does not match the pattern'
     }
-    else if(this.email?.hasError('required')){
-      return 'Email is required'
-    }
-    else if(this.email?.hasError('email')){
-      return 'Please enter a valid email'
-    }
     return;
   }
 
   getEmailErrorMessage() {
     if(this.email?.hasError('required')){
-      return 'email is required'
+      return 'Email is required'
     }
     else if(this.email?.hasError('email')){
-      return 'please enter a valid email'
+      return 'Please enter a valid email'
     }
     return;
   }
