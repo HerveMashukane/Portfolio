@@ -14,7 +14,7 @@
     </div>
 
     <!-- menu btn (only dispayed on sm screens) -->
-    <div *ngIf="isSmallScreen">
+    <div *ngIf="isSmallScreen$ | async">
         <button 
             class="text-primary text-2xl" 
             [ngClass]="{'bi bi-x': isClicked, 'bi bi-list': !isClicked}"
@@ -86,7 +86,7 @@
     <div>
         <h2 class="text-xl md:text-2xl text-primary font-bold">Skills</h2>
     </div>
-    <div class="grid grid-cols-3 gap-4 text-xl text-textPrimary">
+    <div class="grid grid-cols-3 gap-4 text-xl text-textPrimary space-y-4">
         <h2>HTML <div class="w-32 h-1 mx-auto bg-primary mt-2"></div></h2>
         <h2>CSS <div class="w-32 h-1 mx-auto bg-primary mt-2"></div></h2>
         <h2>JavaScript <div class="w-32 h-1 mx-auto bg-primary mt-2"></div></h2>
