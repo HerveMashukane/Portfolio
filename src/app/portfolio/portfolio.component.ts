@@ -88,7 +88,7 @@ export class PortfolioComponent {
     this.form = new FormGroup({
       name: new FormControl('', [
         Validators.required,
-        Validators.pattern('[A-Za-z]+')
+        Validators.pattern('^[A-Za-z ]+')
       ]),
 
       email: new FormControl('', [
@@ -107,16 +107,16 @@ export class PortfolioComponent {
 
   getNameErrorMessage() {
     if(this.name?.hasError('required')) {
-      return 'name is required'
+      return 'Name is required'
     }
     else if(this.name?.hasError('pattern')){
-      return 'name does not match the pattern'
+      return 'Name does not match the pattern'
     }
     else if(this.email?.hasError('required')){
-      return 'email is required'
+      return 'Email is required'
     }
     else if(this.email?.hasError('email')){
-      return 'please enter a valid email'
+      return 'Please enter a valid email'
     }
     return;
   }
