@@ -52,10 +52,10 @@
 <!-- home section -->
 <section #home class="flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat bg-[url('/assets/images/computer.jpg')] md:h-[500px] sm:h-[350px]">
     <div class="flex flex-col items-center text-center space-y-4 py-8">
-        <h2 class="text-white text-2xl font-bold md:w-[500px]">
+        <h2 class="text-white text-lg font-bold md:w-[500px] sm:w-[400px] md:text-2xl">
             Hello <span class="text-secondary"><i class="fas fa-hand"></i></span> <br>
             I am Hervé Mashukane. <br> Glad to see <span class="text-primary"><i class="bi bi-eye-fill"></i></span> you!
-        </h2>
+        </h2>        
         <p class="text-white md:text-lg md:w-[600px]">
             I'm a Front-End Developer<span class="text-primary"><i class="bi bi-laptop-fill"></i></span>,
             I create engaging, user-friendly web applications with modern technologies like Angular, TypeScript, and more...
@@ -105,14 +105,14 @@
     </div>
 
     <div class="bg-primary md:w-[75%] mx-auto rounded-lg my-6 py-3 sm:w-full relative">
-        <!-- left & right icons -->
+        <!-- left & right btns -->
         <div class="absolute top-1/2 w-full flex justify-between px-4 text-secondary">
-            <!-- left icon -->
-            <span class="md:text-xl cursor-pointer sm:text-base" (click)="previousProject()">
+            <!-- left btn -->
+            <span aria-label="Previous project" class="md:text-xl cursor-pointer sm:text-base" (click)="previousProject()">
                 <i class="bi bi-chevron-double-left"></i>
             </span>
-            <!-- right icon -->
-            <span class="md:text-xl cursor-pointer sm:text-base" (click)="nextProject()">
+            <!-- right btn -->
+            <span aria-label="Next project" class="md:text-xl cursor-pointer sm:text-base" (click)="nextProject()">
                 <i class="bi bi-chevron-double-right"></i>
             </span>
         </div>
@@ -131,7 +131,7 @@
             </div>
 
             <!-- projects screenshots -->
-            <img [src]="projects[currentIndex].image" alt="" class="w-[80%] sm:w-[40%] py-6 mx-auto sm:mx-0">
+            <img [src]="projects[currentIndex].image" loading="lazy" alt="screenshot of project" class="w-[80%] sm:w-[40%] py-6 mx-auto sm:mx-0">
         </div>
 
         <!-- navigation dots -->
