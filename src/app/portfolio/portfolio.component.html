@@ -183,37 +183,29 @@
 <!-- contact section -->
 <section #contact class="py-8 text-center content-center mb-8 bg-gray-200 shadow-2xl md:h-[400px] sm:h-[250px]">
     <h2 class="text-primary text-xl md:text-2xl text-center font-bold pb-4">Contact</h2>
-    <form class="flex flex-col w-full sm:w-[70%] md:w-[40%] mx-auto space-y-4">
+    <form [formGroup]="form"
+        class="flex flex-col w-full sm:w-[70%] md:w-[40%] mx-auto space-y-4">
         <!-- name -->
         <input 
             class="border border-gray-400 p-2 outline-none rounded" 
             type="text" name="name" id="name" placeholder="Your Name" 
-            required 
-            pattern="[A-Za-z]+" 
-            ngModel 
-            #name="ngModel">
-            <!-- name validation error -->
-        <div *ngIf="name.touched && name.invalid">
-            <div class="text-accent" *ngIf="name.errors?.['required']">Name is required</div>
-            <div class="text-accent" *ngIf="name.errors?.['pattern']">Name doesn't match the pattern</div>
-        </div>
+            formControlName="name">
+            <div 
+                *ngIf="name?.touched && name?.invalid"
+                class="text-red-700">
+                {{ getNameErrorMessage() }}
+            </div>
         <!-- email -->
         <input 
             class="border border-gray-400 p-2 outline-none rounded" 
             type="email" name="email" id="email" 
             placeholder="Your Email" 
-            required 
-            ngModel 
-            #email="ngModel">
-            <!-- email validation error -->
-             <div *ngIf="email.touched && email.invalid">
-                <div *ngIf="email.errors?.['required']" class="text-accent">
-                    Email is required
-                </div>
-                <div *ngIf="email.errors?.['email']">
-                    Enter a valid email
-                </div>
-             </div>
+            formControlName="email">
+            <div 
+                *ngIf="email?.touched && email?.invalid"
+                class="text-red-700">
+                {{ getEmailErrorMessage() }}
+            </div>
         <textarea 
             name="message" 
             id="message" 

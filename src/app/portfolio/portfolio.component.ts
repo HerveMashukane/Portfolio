@@ -1,11 +1,11 @@
 import { Component, ElementRef, HostListener, viewChild, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.css'
 })
@@ -38,20 +38,6 @@ export class PortfolioComponent {
       btnText: 'View Project',
       link: 'https://portfolio-hervemashukane.netlify.app/'
     },
-    // {
-    //   id: 4,
-    //   title: 'WebDev',
-    //   text: 'Screenshot of a responsive website template built in HTML & CSS for web design and development courses.',
-    //   image: '/assets/images/website-template.png',
-    //   btnText: 'View Project'
-    // },
-    // {
-    //   id: 5,
-    //   title: 'Interior House Design',
-    //   text: 'A sample of a Website template for interior house designing services and products with inputs form validation built in HTML, CSS and JavaScript',
-    //   image: '/assets/images/house-design.png',
-    //   btnText: 'View Project'
-    // },
 
   ]
   // check screen size
@@ -93,5 +79,55 @@ export class PortfolioComponent {
   // scroll behaviour
   scrollToSection(section: ElementRef) {
     section.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
+  // validation errors
+  form: FormGroup
+
+  constructor() {
+    this.form = new FormGroup({
+      name: new FormControl('', [
+        Validators.required,
+        Validators.pattern('[A-Za-z]+')
+      ]),
+
+      email: new FormControl('', [
+        Validators.required,
+        Validators.email
+      ])
+    })
+  }
+
+  get name() {
+    return this.form.get('name')
+  }
+  get email() {
+    return this.form.get('email')
+  }
+
+  getNameErrorMessage() {
+    if(this.name?.hasError('required')) {
+      return 'name is required'
+    }
+    else if(this.name?.hasError('pattern')){
+      return 'name does not match the pattern'
+    }
+    else if(this.email?.hasError('required')){
+      return 'email is required'
+    }
+    else if(this.email?.hasError('email')){
+      return 'please enter a valid email'
+    }
+    return;
+  }
+
+  getEmailErrorMessage() {
+    if(this.email?.hasError('required')){
+      return 'email is required'
+    }
+    else if(this.email?.hasError('email')){
+      return 'please enter a valid email'
+    }
+    return;
   }
 }
