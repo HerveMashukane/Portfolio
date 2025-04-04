@@ -14,7 +14,7 @@
     </div>
 
     <!-- menu btn (only dispayed on sm screens) -->
-    <div *ngIf="isSmallScreen$ | async">
+    <div *ngIf="isSmallScreen">
         <button 
             class="text-primary text-2xl" 
             [ngClass]="{'bi bi-x': isClicked, 'bi bi-list': !isClicked}"
@@ -74,7 +74,7 @@
         <h2 class="text-xl md:text-2xl">About Me</h2>
     </div>
     <div>
-        <p class="md:w-[750px] md:text-lg mx-auto text-base sm:w-[300px] px-4">
+        <p class="text-sm md:w-[750px] md:text-lg mx-auto sm:w-[300px] px-4">
             I am a Web Developer | Front-End Enthusiast | Proficient in JavaScript, TypeScript, Angular, HTML, CSS, and Tailwind CSS. 
             Building User-Centered Applications | Fast Learner and committed to Adapting and Growing in Tech.
         </p>
@@ -86,7 +86,7 @@
     <div>
         <h2 class="text-xl md:text-2xl text-primary font-bold">Skills</h2>
     </div>
-    <div class="grid grid-cols-3 gap-4 text-xl text-textPrimary space-y-4">
+    <div class="grid grid-cols-3 gap-4 text-sm md:text-xl text-textPrimary space-y-4">
         <h2>HTML <div class="w-32 h-1 mx-auto bg-primary mt-2"></div></h2>
         <h2>CSS <div class="w-32 h-1 mx-auto bg-primary mt-2"></div></h2>
         <h2>JavaScript <div class="w-32 h-1 mx-auto bg-primary mt-2"></div></h2>

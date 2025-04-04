@@ -1,8 +1,6 @@
 import { Component, ElementRef, HostListener, viewChild, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { debounceTime } from 'rxjs/operators';
-import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-portfolio',
@@ -43,16 +41,9 @@ export class PortfolioComponent {
 
   ]
   // check screen size
-  isSmallScreen$ = new BehaviorSubject<boolean>(false);
-
   @HostListener('window:resize', ['$event'])
-  onResize(event: Event) {
-    // debouncing window resize events
-    this.isSmallScreen$.next(window.innerWidth < 768);
-  }
-
-  ngOnInit() {
-    this.isSmallScreen$.next(window.innerWidth < 768); // initial check
+  CheckScreenSize() {
+    this.isSmallScreen = window.innerWidth < 768;
   }
 
   // toggle menu
