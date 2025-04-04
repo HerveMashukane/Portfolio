@@ -13,12 +13,12 @@ module.exports = {
       keyframes: {
         pulseLogo: {
           '0%, 90%, 100%': { transform: 'rotate(0deg)' },
-          '90%': { transform: 'rotate(360deg)' }
+          '95%': { transform: 'rotate(360deg)' }
         }
       },
       animation: {
         pulseLogo: 'pulseLogo 3s ease-in-out infinite'
-      }
+      }    
     },
   },
   plugins: [],
