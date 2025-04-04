@@ -30,23 +30,23 @@
         '-translate-y-96 opacity-0 pointer-events-none': !isClicked && isSmallScreen,
         'translate-y-0 opacity-100 pointer-events-auto': isClicked && isSmallScreen
         }">
-        <a (click)="scrollToSection(homeSection)" 
+        <a (click)="scrollToSection(homeSection); autoCloseMenu()" 
             class="text-textPrimary hover:text-secondary cursor-pointer">
             Home
         </a>
-        <a (click)="scrollToSection(aboutSection)" 
+        <a (click)="scrollToSection(aboutSection); autoCloseMenu()" 
             class="text-textPrimary hover:text-secondary cursor-pointer">
             About
         </a>
-        <a (click)="scrollToSection(skillsSection)" 
+        <a (click)="scrollToSection(skillsSection); autoCloseMenu()" 
             class="text-textPrimary hover:text-secondary cursor-pointer">
             Skills
         </a>
-        <a (click)="scrollToSection(projectsSection)" 
+        <a (click)="scrollToSection(projectsSection); autoCloseMenu()" 
             class="text-textPrimary hover:text-secondary cursor-pointer">
             Projects
         </a>
-        <a (click)="scrollToSection(contactSection)" 
+        <a (click)="scrollToSection(contactSection); autoCloseMenu()" 
             class="text-textPrimary hover:text-secondary cursor-pointer">
             Contact
         </a>

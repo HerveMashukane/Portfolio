@@ -54,6 +54,13 @@ export class PortfolioComponent {
     }
   }
 
+  // close the menu automatically on sm screens when clicked
+  autoCloseMenu(): void {
+    if (this.isSmallScreen) {
+      this.isClicked = false;
+    }
+  }  
+
   // projects dots navigation
   currentIndex = 0;
   goToProject(i: number) {
