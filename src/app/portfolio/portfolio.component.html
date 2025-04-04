@@ -7,11 +7,11 @@
 <nav class="flex items-center justify-between px-8 py-4 relative">
     <!-- logo -->
     <div class="md:flex md:items-center md:mr-4">
-      <h2 *ngIf="!isClicked"
-          class="text-primary text-3xl cursor-pointer font-bold tracking-wide shadow-xl hover:translate-x-3 duration-300">
-        Hervé
-      </h2>
-    </div>
+        <h2 *ngIf="!isClicked"
+            class="text-primary text-3xl cursor-pointer font-bold tracking-wide shadow-xl animate-pulseLogo">
+          Hervé
+        </h2>
+    </div>    
   
     <!-- menu btn (only visible on small screens) -->
     <div *ngIf="isSmallScreen">
