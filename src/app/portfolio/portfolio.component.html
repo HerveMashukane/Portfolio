@@ -7,9 +7,9 @@
 <nav class="flex items-center justify-between px-8 py-4 relative">
     <!-- logo -->
     <div class="md:flex md:items-center md:mr-4">
-        <h2 *ngIf="!isClicked"
+        <h2
             class="text-primary text-3xl cursor-pointer font-bold tracking-wide shadow-xl animate-pulseLogo">
-          Hervé
+            Hervé
         </h2>
     </div>    
   
@@ -23,7 +23,7 @@
     </div>
   
     <!-- nav links -->
-    <div
+    <div class="animate-bounceLinks"
       [ngClass]="{
         'flex flex-col absolute top-20 left-0 w-full bg-white sm:text-white items-center space-y-4 p-6 shadow-lg transition-all duration-500 ease-in-out transform': true,
         'md:relative md:flex md:flex-row md:w-full md:justify-end md:items-center md:space-x-4 md:space-y-0 md:top-0 md:left-0 md:shadow-none': true,
@@ -65,7 +65,7 @@
     <div class="flex flex-col items-center text-center space-y-4 py-8">
         <h2 class="text-white text-lg font-bold md:w-[500px] sm:w-[400px] md:text-2xl">
             Hello <span class="text-secondary"><i class="fas fa-hand"></i></span> <br>
-            I am Hervé Mashukane. <br> Glad to see <span class="text-primary"><i class="bi bi-eye-fill"></i></span> you!
+            I am Hervé Mashukane. <br> Glad to see <span class="text-primary animate-spin"><i class="bi bi-eye-fill"></i></span> you!
         </h2>        
         <p class="text-white md:text-lg md:w-[600px]">
             I'm a Front-End Developer<span class="text-primary"><i class="bi bi-laptop-fill"></i></span>,
@@ -73,7 +73,7 @@
         </p>
         <button 
             (click)="scrollToSection(projectsSection)"
-            class="text-white bg-primary px-2 py-2 shadow-lg w-32 mx-auto rounded-xl hover:bg-blue-800">
+            class="text-white bg-primary px-2 py-2 shadow-lg w-32 mx-auto rounded-xl hover:bg-blue-800 animate-spin">
             View Projects
         </button>
     </div>
@@ -160,7 +160,8 @@
 <section>
     <div>
         <div class="flex flex-col justify-center">
-            <button class="text-white bg-accent px-2 py-2 mt-4 shadow-lg w-32 mx-auto rounded-xl hover:bg-red-600">
+            <button 
+                class="text-white bg-accent px-2 py-2 mt-4 shadow-lg w-32 mx-auto rounded-xl hover:bg-red-600 animate-spin">
                 Let's Connect
             </button>
             <br>
@@ -170,19 +171,19 @@
         </div>
         <div class="flex justify-center space-x-4 text-primary text-xl">
             <!-- linkedin -->
-            <span class="cursor-pointer hover:-translate-y-1/4 transition-all">
+            <span class="cursor-pointer animate-bounce">
                 <a href="https://www.linkedin.com/in/herv%C3%A9-mashukane-9b104b304/" target="_blank" rel="noopener noreferrer">
                     <i class="bi bi-linkedin"></i>
                 </a>
             </span>
             <!-- email -->
-            <span class="cursor-pointer hover:-translate-y-1/4 transition-all">
+            <span class="cursor-pointer animate-bounce">
                 <a href="mailto:hervemashukane@gmail.com?subject=Inquiry from Your Website" target="_blank">
                     <i class="bi bi-envelope-fill"></i>
                 </a>
             </span>
             <!-- github -->
-            <span class="cursor-pointer hover:-translate-y-1/4 transition-all">
+            <span class="cursor-pointer animate-bounce">
                 <a href="https://github.com/HerveMashukane" target="_blank" rel="noopener noreferrer">
                     <i class="bi bi-github"></i>
                 </a>
