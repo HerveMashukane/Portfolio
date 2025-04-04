@@ -13,7 +13,7 @@
       </h2>
     </div>
   
-    <!-- menu btn (only on small screens) -->
+    <!-- menu btn (only visible on small screens) -->
     <div *ngIf="isSmallScreen">
       <button 
         class="text-primary text-2xl" 
@@ -29,19 +29,39 @@
         'md:relative md:flex md:flex-row md:w-full md:justify-end md:items-center md:space-x-4 md:space-y-0 md:top-0 md:left-0 md:shadow-none': true,
         '-translate-y-96 opacity-0 pointer-events-none': !isClicked && isSmallScreen,
         'translate-y-0 opacity-100 pointer-events-auto': isClicked && isSmallScreen
-      }"
-    >
-      <a (click)="scrollToSection(homeSection); autoCloseMenu()" class="text-textPrimary hover:text-secondary cursor-pointer">Home</a>
-      <a (click)="scrollToSection(aboutSection); autoCloseMenu()" class="text-textPrimary hover:text-secondary cursor-pointer">About</a>
-      <a (click)="scrollToSection(skillsSection); autoCloseMenu()" class="text-textPrimary hover:text-secondary cursor-pointer">Skills</a>
-      <a (click)="scrollToSection(projectsSection); autoCloseMenu()" class="text-textPrimary hover:text-secondary cursor-pointer">Projects</a>
-      <a (click)="scrollToSection(contactSection); autoCloseMenu()" class="text-textPrimary hover:text-secondary cursor-pointer">Contact</a>
+      }">
+        <a 
+            (click)="scrollToSection(homeSection); autoCloseMenu()" 
+            class="text-textPrimary hover:text-secondary cursor-pointer">
+            Home
+        </a>
+        <a 
+            (click)="scrollToSection(aboutSection); autoCloseMenu()" 
+            class="text-textPrimary hover:text-secondary cursor-pointer">
+            About
+        </a>
+        <a 
+            (click)="scrollToSection(skillsSection); autoCloseMenu()" 
+            class="text-textPrimary hover:text-secondary cursor-pointer">
+            Skills
+        </a>
+        <a 
+            (click)="scrollToSection(projectsSection); autoCloseMenu()" 
+            class="text-textPrimary hover:text-secondary cursor-pointer">
+            Projects
+        </a>
+        <a 
+            (click)="scrollToSection(contactSection); autoCloseMenu()" 
+            class="text-textPrimary hover:text-secondary cursor-pointer">
+            Contact
+        </a>
     </div>
   </nav>
   
 
 <!-- home section -->
-<section #home class="flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat bg-[url('/assets/images/computer.jpg')] md:h-[500px] sm:h-[350px]">
+<section #home 
+    class="flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat bg-[url('/assets/images/computer.jpg')] md:h-[500px] sm:h-[350px]">
     <div class="flex flex-col items-center text-center space-y-4 py-8">
         <h2 class="text-white text-lg font-bold md:w-[500px] sm:w-[400px] md:text-2xl">
             Hello <span class="text-secondary"><i class="fas fa-hand"></i></span> <br>
