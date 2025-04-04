@@ -5,6 +5,7 @@
 
 <!-- navbar -->
 <nav class="flex justify-between px-8 py-4">
+
     <!-- logo -->
     <div>
         <h2 *ngIf="!isClicked"
@@ -23,9 +24,12 @@
     </div>
 
     <!-- links -->
-    <div 
-        class="md:flex space-x-4" 
-        [class.hidden]="!isClicked && isSmallScreen">
+    <div
+        [ngClass]="{
+        'flex flex-col absolute top-20 left-0 w-full bg-white items-center space-y-4 p-6 shadow-lg transition-all duration-500 ease-in-out transform md:relative md:flex-row md:space-x-4 md:space-y-0 md:top-0 md:left-0 md:shadow-none': true,
+        '-translate-y-96 opacity-0 pointer-events-none': !isClicked && isSmallScreen,
+        'translate-y-0 opacity-100 pointer-events-auto': isClicked && isSmallScreen
+        }">
         <a (click)="scrollToSection(homeSection)" 
             class="text-textPrimary hover:text-secondary cursor-pointer">
             Home
