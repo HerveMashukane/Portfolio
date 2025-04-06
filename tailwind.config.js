@@ -15,36 +15,36 @@ module.exports = {
       },
       keyframes: {
         // logo animation
-        pulseLogo: {
-          '0%, 90%, 100%': {transform: 'rotate(0deg)'},
-          '50%': {transform: 'rotate(360deg)'}
-        },
-        // nav links animation
-        bounceLinks: {
+        // pulseLogo: {
+        //   '0%, 90%, 100%': {transform: 'rotate(0deg)'},
+        //   '90%': {transform: 'rotate(360deg)'}
+        // },
+        // navbar animation
+        bounceNav: {
           '0%, 100%': {transform: 'translateX(0)'},
           '90%': {transform: 'translateX(-10px)'}
         },
         // social media icons animations
-        pulseLinkedIn: {
+        bounceLinkedIn: {
           '0%, 100%': {transform: 'translateY(0)'},
           '90%': {transform: 'translateY(-10px)'}
         },
-        pulseEmail: {
+        bounceEmail: {
           '0%, 100%': {transform: 'translateY(0)'},
           '90%': {transform: 'translateY(-10px)'}
         },
-        pulseGitHub: {
+        bounceGitHub: {
           '0%, 100%': {transform: 'translateY(0)'},
           '90%': {transform: 'translateY(-10px)'}
         }
       },
       // animations calls
       animation: {
-        pulseLogo: 'pulseLogo 5s ease-in-out infinite',
-        bounceLinks: 'bounceLinks 2s ease infinite',
-        bounceLinkedIn: 'pulseLinkedIn 1s ease infinite',
-        bounceEmail: 'pulseEmail 3s ease infinite',
-        bounceGitHub: 'pulseGitHub 1s ease infinite'
+        pulseLogo: 'pulseLogo 3s ease-in-out infinite',
+        bounceNav: 'bounceNav 2s ease infinite',
+        bounceLinkedIn: 'bounceLinkedIn 3s ease infinite',
+        bounceEmail: 'bounceEmail 1s ease infinite',
+        bounceGitHub: 'bounceGitHub 3s ease infinite'
       }
     },
   },

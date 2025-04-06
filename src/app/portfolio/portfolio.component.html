@@ -4,11 +4,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <!-- navbar -->
-<nav class="flex items-center justify-between px-8 py-4 relative">
+<nav class="flex items-center justify-between px-8 py-4 relative animate-bounceNav">
     <!-- logo -->
     <div class="md:flex md:items-center md:mr-4">
         <h2
-            class="text-primary text-3xl cursor-pointer font-bold tracking-wide shadow-xl animate-pulseLogo">
+            class="text-primary text-3xl cursor-pointer font-bold tracking-wide shadow-xl">
             Hervé
         </h2>
     </div>    
@@ -23,7 +23,7 @@
     </div>
   
     <!-- nav links -->
-    <div class="animate-bounceLinks"
+    <div
       [ngClass]="{
         'flex flex-col absolute top-20 left-0 w-full bg-white sm:text-white items-center space-y-4 p-6 shadow-lg transition-all duration-500 ease-in-out transform': true,
         'md:relative md:flex md:flex-row md:w-full md:justify-end md:items-center md:space-x-4 md:space-y-0 md:top-0 md:left-0 md:shadow-none': true,
