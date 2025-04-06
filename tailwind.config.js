@@ -16,15 +16,15 @@ module.exports = {
       keyframes: {
         pulseLogo: {
           '0%, 90%, 100%': {transform: 'rotate(0deg)'},
-          '90%': {transform: 'rotate(360deg)'}
+          '50%': {transform: 'rotate(360deg)'}
         },
         bounceLinks: {
-          '0%, 100%': {transform: 'translateY(0)'},
-          '50%': {transform: 'translateY(-10px)'}
-        }
+          '0%, 100%': {transform: 'translateX(0)'},
+          '90%': {transform: 'translateX(-10px)'}
+        },
       },
       animation: {
-        pulseLogo: 'pulseLogo 3s ease-in-out infinite',
+        pulseLogo: 'pulseLogo 5s ease-in-out infinite',
         bounceLinks: 'bounceLinks 2s ease infinite'
       }
     },

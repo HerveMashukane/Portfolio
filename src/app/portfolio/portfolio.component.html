@@ -65,7 +65,7 @@
     <div class="flex flex-col items-center text-center space-y-4 py-8">
         <h2 class="text-white text-lg font-bold md:w-[500px] sm:w-[400px] md:text-2xl">
             Hello <span class="text-secondary"><i class="fas fa-hand"></i></span> <br>
-            I am Hervé Mashukane. <br> Glad to see <span class="text-primary animate-spin"><i class="bi bi-eye-fill"></i></span> you!
+            I am Hervé Mashukane. <br> Glad to see <span class="text-primary animate-pulse"><i class="bi bi-eye-fill"></i></span> you!
         </h2>        
         <p class="text-white md:text-lg md:w-[600px]">
             I'm a Front-End Developer<span class="text-primary"><i class="bi bi-laptop-fill"></i></span>,
@@ -73,7 +73,7 @@
         </p>
         <button 
             (click)="scrollToSection(projectsSection)"
-            class="text-white bg-primary px-2 py-2 shadow-lg w-32 mx-auto rounded-xl hover:bg-blue-800 animate-spin">
+            class="text-white bg-primary px-2 py-2 shadow-lg w-32 mx-auto rounded-xl hover:bg-blue-800 animate-pulse">
             View Projects
         </button>
     </div>
@@ -136,7 +136,7 @@
                     {{ projects[currentIndex].text }}
                 </p>
                 <a [href]="projects[currentIndex].link" target="_blank" rel="noopener noreferrer"
-                    class="text-white bg-accent px-4 py-2 shadow-lg w-32 mx-auto rounded-xl hover:bg-red-600">
+                    class="text-white bg-accent px-4 py-2 shadow-lg w-32 mx-auto rounded-xl hover:bg-red-600 animate-pulse">
                     {{ projects[currentIndex].btnText }}
                 </a>
             </div>
@@ -161,7 +161,7 @@
     <div>
         <div class="flex flex-col justify-center">
             <button 
-                class="text-white bg-accent px-2 py-2 mt-4 shadow-lg w-32 mx-auto rounded-xl hover:bg-red-600 animate-spin">
+                class="text-white bg-accent px-2 py-2 mt-4 shadow-lg w-32 mx-auto rounded-xl hover:bg-red-600 animate-pulse">
                 Let's Connect
             </button>
             <br>
