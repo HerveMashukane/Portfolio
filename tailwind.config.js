@@ -16,7 +16,7 @@ module.exports = {
       keyframes: {
         pulseLogo: {
           '0%, 90%, 100%': {transform: 'rotate(0deg)'},
-          '50%': {transform: 'rotate(360deg)'}
+          '90%': {transform: 'rotate(360deg)'}
         },
         bounceLinks: {
           '0%, 100%': {transform: 'translateY(0)'},
@@ -26,7 +26,6 @@ module.exports = {
       animation: {
         pulseLogo: 'pulseLogo 3s ease-in-out infinite',
         bounceLinks: 'bounceLinks 2s ease infinite'
-
       }
     },
   },
