@@ -1,5 +1,5 @@
+import '@angular/compiler';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { AppComponent } from './app/app.component';  // Replace with your standalone component
+import { AppComponent } from './app/app.component';
 
-bootstrapApplication(AppComponent)
-  .catch(err => console.error(err));
+bootstrapApplication(AppComponent).catch(err => console.error(err));
