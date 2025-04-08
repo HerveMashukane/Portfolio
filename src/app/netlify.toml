@@ -1,0 +1,9 @@
+[build]
+  command = "ng build --configuration production"
+  publish = "dist/portfolio"
+
+[[plugins]]
+  package = "@netlify/plugin-angular-runtime"
+
+  [plugins.inputs]
+  skip = true
