@@ -46,7 +46,7 @@
           }
           ],
           "outputHashing": "all",
-          "aot": true, 
+          "aot": false, 
           "optimization": true,
          "extractLicenses": true,
          "sourceMap": false
