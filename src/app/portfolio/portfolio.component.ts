@@ -19,7 +19,7 @@ export class PortfolioComponent {
       text: 'A sample screenshot of an interactive, dynamic and responsive students dashboard of a company named HiroMate, built in Angular, TypeScript and Tailwind CSS, having a student form, adds new students, displays their details, removes, updates, toggle their status and saves them.',
       image: '/assets/images/studentDashboard.png',
       btnText: 'View Project',
-      link: 'https://hiro-mate.netlify.app/'
+      link: 'https://herve-hiromate.netlify.app/'
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ export class PortfolioComponent {
       text: 'A sample screenshot of an interactive Web application for food, built in Angular, TypeScript and Tailwind CSS, with a caroussel implementation for clients testmonials and responsive on multiple devices.',
       image: '/assets/images/foodieApp.png',
       btnText: 'View Project',
-      link: 'https://foodieapp2024.netlify.app/'
+      link: 'https://herve-foodieapp.netlify.app/'
     },
     {
       id: 3,
