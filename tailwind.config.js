@@ -1,6 +1,3 @@
-const { keyframes } = require("@angular/animations");
-const { transform } = require("typescript");
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [

@@ -15,11 +15,19 @@
   
     <!-- menu btn (only visible on small screens) -->
     <div *ngIf="isSmallScreen">
+<<<<<<< HEAD
+      <button 
+        class="text-primary text-2xl" 
+        [ngClass]="{'bi bi-x': isClicked, 'bi bi-list': !isClicked}"
+        (click)="toggleMenu()">
+      </button>
+=======
         <button 
             class="text-primary text-2xl" 
             [ngClass]="{'bi bi-x': isClicked, 'bi bi-list': !isClicked}"
             (click)="toggleMenu()">
         </button>
+>>>>>>> develop
     </div>
   
     <!-- nav links -->
