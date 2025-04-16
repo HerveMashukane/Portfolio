@@ -1,7 +1,16 @@
+<<<<<<< HEAD
+const { keyframes } = require("@angular/animations");
+const { transform } = require("typescript");
+
+module.exports = {
+  content: [
+    "./src/**/*.{html,ts}"
+=======
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./src/**/*.{html,ts}",
+>>>>>>> develop
   ],
   theme: {
     extend: {
@@ -47,4 +56,5 @@ module.exports = {
     },
   },
   plugins: [],
+};
 }
