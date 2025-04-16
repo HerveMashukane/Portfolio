@@ -35,7 +35,7 @@ export class PortfolioComponent {
       text: 'Screenshot of a fully responsive personal portfolio built in Angular, TypeScript and Tailwind CSS.',
       image: '/assets/images/portfolio.png',
       btnText: 'Full Project',
-      link: 'https://portfolio-hervemashukane.netlify.app/'
+      link: 'https://herve-portfolio.netlify.app/'
     },
 
   ]
