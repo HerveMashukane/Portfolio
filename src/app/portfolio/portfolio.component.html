@@ -4,108 +4,132 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <!-- navbar -->
-<nav class="flex items-center justify-between px-8 py-4 relative animate-bounceNav">
+<nav class="flex items-center justify-between px-6 md:px-12 py-4 relative bg-white shadow-md z-50">
     <!-- logo -->
-    <div class="md:flex md:items-center md:mr-4">
-        <h2
-            class="text-primary text-3xl cursor-pointer font-bold tracking-wide shadow-xl">
-            Hervé
-        </h2>
-    </div>    
+    <div class="text-primary text-3xl font-bold tracking-wide">
+      Hervé
+    </div>
   
-    <!-- menu btn (only visible on small screens) -->
-    <div *ngIf="isSmallScreen">
-        <button 
-            class="text-primary text-2xl" 
-            [ngClass]="{'bi bi-x': isClicked, 'bi bi-list': !isClicked}"
-            (click)="toggleMenu()">
-        </button>
+    <!-- menu button (visible on small screens only) -->
+    <div class="md:hidden">
+      <button 
+        class="text-primary text-3xl" 
+        [ngClass]="{ 'bi bi-x': isClicked, 'bi bi-list': !isClicked }"
+        (click)="toggleMenu()"
+      ></button>
     </div>
   
     <!-- nav links -->
     <div
       [ngClass]="{
-        'flex flex-col absolute top-20 left-0 w-full bg-white sm:text-white items-center space-y-4 p-6 shadow-lg transition-all duration-500 ease-in-out transform': true,
-        'md:relative md:flex md:flex-row md:w-full md:justify-end md:items-center md:space-x-4 md:space-y-0 md:top-0 md:left-0 md:shadow-none': true,
-        '-translate-y-96 opacity-0 pointer-events-none': !isClicked && isSmallScreen,
+        'absolute w-full bg-white left-0 top-20 space-y-4 p-6 text-center shadow-lg transition-all duration-500 ease-in-out': true,
+        'md:static md:flex md:space-x-8 md:space-y-0 md:justify-end md:p-0 md:shadow-none md:bg-transparent md:items-center': true,
+        '-translate-y-[300px] opacity-0 pointer-events-none': !isClicked && isSmallScreen,
         'translate-y-0 opacity-100 pointer-events-auto': isClicked && isSmallScreen
-      }">
-        <a 
-            (click)="scrollToSection(homeSection); autoCloseMenu()" 
-            class="text-textPrimary hover:text-secondary cursor-pointer">
-            Home
-        </a>
-        <a 
-            (click)="scrollToSection(aboutSection); autoCloseMenu()" 
-            class="text-textPrimary hover:text-secondary cursor-pointer">
-            About
-        </a>
-        <a 
-            (click)="scrollToSection(skillsSection); autoCloseMenu()" 
-            class="text-textPrimary hover:text-secondary cursor-pointer">
-            Skills
-        </a>
-        <a 
-            (click)="scrollToSection(projectsSection); autoCloseMenu()" 
-            class="text-textPrimary hover:text-secondary cursor-pointer">
-            Projects
-        </a>
-        <a 
-            (click)="scrollToSection(contactSection); autoCloseMenu()" 
-            class="text-textPrimary hover:text-secondary cursor-pointer">
-            Contact
-        </a>
+      }"
+      class="flex flex-col md:flex-row"
+    >
+      <a
+        (click)="scrollToSection(homeSection); autoCloseMenu()"
+        class="text-textPrimary hover:text-secondary font-medium cursor-pointer"
+      >Home</a>
+      <a
+        (click)="scrollToSection(aboutSection); autoCloseMenu()"
+        class="text-textPrimary hover:text-secondary font-medium cursor-pointer"
+      >About</a>
+      <a
+        (click)="scrollToSection(skillsSection); autoCloseMenu()"
+        class="text-textPrimary hover:text-secondary font-medium cursor-pointer"
+      >Skills</a>
+      <a
+        (click)="scrollToSection(projectsSection); autoCloseMenu()"
+        class="text-textPrimary hover:text-secondary font-medium cursor-pointer"
+      >Projects</a>
+      <a
+        (click)="scrollToSection(contactSection); autoCloseMenu()"
+        class="text-textPrimary hover:text-secondary font-medium cursor-pointer"
+      >Contact</a>
     </div>
-  </nav>
+  </nav>  
   
 
 <!-- home section -->
-<section #home 
-    class="flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat bg-[url('/assets/images/computer.jpg')] md:h-[500px] sm:h-[350px]">
-    <div class="flex flex-col items-center text-center space-y-4 py-8">
-        <h2 class="text-white text-lg font-bold md:w-[500px] sm:w-[400px] md:text-2xl">
-            Hello <span class="text-secondary"><i class="fas fa-hand"></i></span> <br>
-            I am Hervé Mashukane. <br> Glad to see <span class="text-primary animate-pulse"><i class="bi bi-eye-fill"></i></span> you!
-        </h2>        
-        <p class="text-white md:text-lg md:w-[600px]">
-            I'm a Front-End Developer<span class="text-primary"><i class="bi bi-laptop-fill"></i></span>,
-            I create engaging, user-friendly web applications with modern technologies like Angular, TypeScript, and more...
-        </p>
-        <button 
-            (click)="scrollToSection(projectsSection)"
-            class="text-white bg-primary px-2 py-2 shadow-lg w-32 mx-auto rounded-xl hover:bg-blue-800 animate-pulse">
-            View Projects
-        </button>
-    </div>
+<section
+  #home
+  class="flex items-center justify-center bg-cover bg-center bg-no-repeat md:h-[500px] sm:h-[400px] bg-[url('/assets/images/computer.jpg')]"
+>
+  <div class="bg-black bg-opacity-50 w-full h-full flex flex-col justify-center items-center text-center px-4 py-10 space-y-6">
+    <h2 class="text-white text-xl sm:text-2xl md:text-3xl font-bold leading-relaxed max-w-xl">
+      Hello <span class="text-secondary"><i class="fas fa-hand"></i></span><br />
+      I am Hervé Mashukane. <br />
+      Glad to see <span class="text-primary animate-pulse"><i class="bi bi-eye-fill"></i></span> you!
+    </h2>
+    
+    <p class="text-white text-base sm:text-lg max-w-2xl px-2 leading-relaxed">
+      I'm a <span class="text-accent font-semibold">Front-End Developer</span> 
+      <i class="bi bi-laptop-fill text-primary"></i>, building user-friendly web apps with Angular, TypeScript, and more.
+    </p>
+
+    <button
+      (click)="scrollToSection(projectsSection)"
+      class="bg-primary text-white px-6 py-2 rounded-xl shadow-md hover:bg-blue-800 transition animate-pulse"
+    >
+      View Projects
+    </button>
+  </div>
 </section>
 
 <!-- about section -->
-<section #about class="py-8 text-center content-center mb-8 bg-gray-200 shadow-2xl md:h-[400px] sm:h-[250px]">
-    <div class="py-4 text-xl text-primary font-bold items-center">
-        <h2 class="text-xl md:text-2xl">About Me</h2>
+<section #about class="py-12 px-4 bg-gray-100 shadow-md text-center mb-10">
+    <div class="mb-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-primary">About Me</h2>
     </div>
-    <div>
-        <p class="text-sm md:w-[750px] md:text-lg mx-auto sm:w-[300px] px-4">
-            I am a Web Developer | Front-End Enthusiast | Proficient in JavaScript, TypeScript, Angular, HTML, CSS, and Tailwind CSS. 
-            Building User-Centered Applications | Fast Learner and committed to Adapting and Growing in Tech.
-        </p>
+    <div class="max-w-3xl mx-auto">
+      <p class="text-base md:text-lg text-textPrimary leading-relaxed">
+        I am a <span class="font-semibold text-primary">Web Developer</span> & Front-End Enthusiast, passionate about crafting 
+        user-centered applications using technologies like <span class="text-primary">JavaScript</span>, 
+        <span class="text-primary">TypeScript</span>, <span class="text-primary">Angular</span>, 
+        <span class="text-primary">HTML</span>, <span class="text-primary">CSS</span>, and 
+        <span class="text-primary">Tailwind CSS</span>.
+        <br />
+        I'm a fast learner, constantly evolving, and deeply committed to growth in the tech world.
+      </p>
     </div>
-</section>
+  </section>  
 
-<!-- skills Section -->
-<section #skills class="py-8 text-center content-center mb-8 bg-gray-200 shadow-2xl md:h-[400px] sm:h-[250px]">
-    <div>
-        <h2 class="text-xl md:text-2xl text-primary font-bold">Skills</h2>
+<!-- skills section -->
+<section #skills class="py-12 px-4 bg-gray-100 shadow-md text-center mb-10">
+    <div class="mb-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-primary">Skills</h2>
     </div>
-    <div class="grid grid-cols-3 gap-4 text-sm md:text-xl text-textPrimary space-y-4">
-        <h2>HTML <div class="w-32 h-1 mx-auto bg-primary mt-2"></div></h2>
-        <h2>CSS <div class="w-32 h-1 mx-auto bg-primary mt-2"></div></h2>
-        <h2>JavaScript <div class="w-32 h-1 mx-auto bg-primary mt-2"></div></h2>
-        <h2>TypeScript <div class="w-32 h-1 mx-auto bg-primary mt-2"></div></h2>
-        <h2>Angular <div class="w-32 h-1 mx-auto bg-primary mt-2"></div></h2>
-        <h2>Tailwind CSS <div class="w-32 h-1 mx-auto bg-primary mt-2"></div></h2>
+    
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-5xl mx-auto">
+      <div class="text-textPrimary font-semibold">
+        HTML
+        <div class="w-12 h-1 bg-primary mx-auto mt-1 rounded"></div>
+      </div>
+      <div class="text-textPrimary font-semibold">
+        CSS
+        <div class="w-12 h-1 bg-primary mx-auto mt-1 rounded"></div>
+      </div>
+      <div class="text-textPrimary font-semibold">
+        JavaScript
+        <div class="w-12 h-1 bg-primary mx-auto mt-1 rounded"></div>
+      </div>
+      <div class="text-textPrimary font-semibold">
+        TypeScript
+        <div class="w-12 h-1 bg-primary mx-auto mt-1 rounded"></div>
+      </div>
+      <div class="text-textPrimary font-semibold">
+        Angular
+        <div class="w-12 h-1 bg-primary mx-auto mt-1 rounded"></div>
+      </div>
+      <div class="text-textPrimary font-semibold">
+        Tailwind CSS
+        <div class="w-12 h-1 bg-primary mx-auto mt-1 rounded"></div>
+      </div>
     </div>
-</section>
+  </section>  
 
 <!-- projects section -->
 <section #projcts class="py-8 text-center mb-8 bg-gray-200 shadow-2xl md:h-[500px] sm:h-[250px] flex flex-col justify-center">
@@ -233,21 +257,23 @@
             Send
         </button>
     </form> -->
-    <form action="https://formspree.io/f/xeoaynno" method="POST">
-        <label>
-          Your email:
-          <input type="email" name="email" required>
-        </label>
-        <label>
-          Your message:
-          <textarea name="message" required></textarea>
-        </label>
-      
-        <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
-        <input type="text" name="_gotcha" style="display:none"> <!-- anti-spam -->
-      
-        <button type="submit">Send</button>
-      </form>      
+
+<form [formGroup]="form" action="https://formspree.io/f/xwplgybw" method="POST"
+    class="flex flex-col w-full sm:w-[70%] md:w-[40%] mx-auto space-y-4">
+    <input 
+        class="border border-gray-400 p-2 outline-none rounded" 
+        type="text" name="name" id="name" placeholder="Your Name">
+    <input 
+        class="border border-gray-400 p-2 outline-none rounded" 
+        type="email" name="email" id="email" placeholder="Your Email">
+    <textarea 
+        class="border border-gray-400 p-2 outline-none rounded" 
+        name="message" id="message" rows="4" placeholder="Your Message"></textarea>
+    <button type="submit"
+        class="text-white bg-primary px-4 py-2 rounded hover:bg-blue-800 transition">
+        Send
+    </button>
+</form>    
 </section>
 
 <!-- footer Section -->

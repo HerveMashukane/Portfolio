@@ -88,59 +88,59 @@ export class PortfolioComponent {
   }
 
   // validation errors
-  // form: FormGroup
+  form: FormGroup
 
   constructor() {
-    // this.form = new FormGroup({
-    //   name: new FormControl('', [
-    //     Validators.required,
-    //     Validators.pattern('^[A-Za-z ]+')
-    //   ]),
+    this.form = new FormGroup({
+      name: new FormControl('', [
+        Validators.required,
+        Validators.pattern('^[A-Za-z ]+')
+      ]),
 
-    //   email: new FormControl('', [
-    //     Validators.required,
-    //     Validators.email
-    //   ])
-    // })
+      email: new FormControl('', [
+        Validators.required,
+        Validators.email
+      ])
+    })
   }
 
-  // get name() {
-  //   return this.form.get('name')
-  // }
-  // get email() {
-  //   return this.form.get('email')
-  // }
+  get name() {
+    return this.form.get('name')
+  }
+  get email() {
+    return this.form.get('email')
+  }
 
-  // getNameErrorMessage() {
-  //   if(this.name?.hasError('required')) {
-  //     return 'Name is required'
-  //   }
-  //   else if(this.name?.hasError('pattern')){
-  //     return 'Name does not match the pattern'
-  //   }
-  //   return;
-  // }
+  getNameErrorMessage() {
+    if(this.name?.hasError('required')) {
+      return 'Name is required'
+    }
+    else if(this.name?.hasError('pattern')){
+      return 'Name does not match the pattern'
+    }
+    return;
+  }
 
-  // getEmailErrorMessage() {
-  //   if(this.email?.hasError('required')){
-  //     return 'Email is required'
-  //   }
-  //   else if(this.email?.hasError('email')){
-  //     return 'Please enter a valid email'
-  //   }
-  //   return;
-  // }
+  getEmailErrorMessage() {
+    if(this.email?.hasError('required')){
+      return 'Email is required'
+    }
+    else if(this.email?.hasError('email')){
+      return 'Please enter a valid email'
+    }
+    return;
+  }
 
-  // formData = {
-  //   username: '',
-  //   email: ''
-  // };
+  formData = {
+    username: '',
+    email: ''
+  };
 
-  // sendInformation() {
-  //   console.log('Form submitted!');
-  //   console.log('Username:', this.formData.username);
-  //   console.log('Email:', this.formData.email);
-  // }
+  sendInformation() {
+    console.log('Form submitted!');
+    console.log('Username:', this.formData.username);
+    console.log('Email:', this.formData.email);
+  }
 
   sendMsg(){
     console.log("Working.....")
