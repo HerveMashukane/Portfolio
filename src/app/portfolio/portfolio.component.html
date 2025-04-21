@@ -196,9 +196,10 @@
 <!-- contact section -->
 <section #contact class="py-8 text-center content-center mb-8 bg-gray-200 shadow-2xl md:h-[400px] sm:h-[250px]">
     <h2 class="text-primary text-xl md:text-2xl text-center font-bold pb-4">Contact</h2>
-    <form [formGroup]="form"
+    <!-- <form [formGroup]="form"  action="https://formspree.io/f/xwplgybw"
+  method="POST"
         class="flex flex-col w-full sm:w-[70%] md:w-[40%] mx-auto space-y-4">
-        <!-- name -->
+        
         <input 
             class="border border-gray-400 p-2 outline-none rounded" 
             type="text" name="name" id="name" placeholder="Your Name" 
@@ -208,7 +209,7 @@
                 class="text-red-700">
                 {{ getNameErrorMessage() }}
             </div>
-        <!-- email -->
+       
         <input 
             class="border border-gray-400 p-2 outline-none rounded" 
             type="email" name="email" id="email" 
@@ -231,7 +232,22 @@
             class="text-white bg-primary py-2 rounded-lg">
             Send
         </button>
-    </form>
+    </form> -->
+    <form action="https://formspree.io/f/xeoaynno" method="POST">
+        <label>
+          Your email:
+          <input type="email" name="email" required>
+        </label>
+        <label>
+          Your message:
+          <textarea name="message" required></textarea>
+        </label>
+      
+        <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+        <input type="text" name="_gotcha" style="display:none"> <!-- anti-spam -->
+      
+        <button type="submit">Send</button>
+      </form>      
 </section>
 
 <!-- footer Section -->
