@@ -6,340 +6,353 @@
 <!-- navbar -->
 <nav class="flex items-center justify-between px-6 md:px-12 py-4 relative bg-white shadow-md z-50">
     <!-- logo -->
-    <div class="text-primary text-3xl font-bold tracking-wide">
-      Hervé
-    </div>
+  <div class="text-primary text-3xl font-bold tracking-wide">
+    Hervé
+  </div>
   
-    <!-- menu button (visible on small screens only) -->
-    <div class="md:hidden">
-      <button 
-        class="text-primary text-3xl" 
-        [ngClass]="{ 'bi bi-x': isClicked, 'bi bi-list': !isClicked }"
-        (click)="toggleMenu()"
-      ></button>
-    </div>
+  <!-- menu button (visible on small screens only) -->
+  <div class="md:hidden">
+    <button 
+      class="text-primary text-3xl" 
+      [ngClass]="{ 'bi bi-x': isClicked, 'bi bi-list': !isClicked }"
+      (click)="toggleMenu()">
+    </button>
+  </div>
   
-    <!-- nav links -->
-    <div
-      [ngClass]="{
-        'absolute w-full bg-white left-0 top-20 space-y-4 p-6 text-center shadow-lg transition-all duration-500 ease-in-out': true,
-        'md:static md:flex md:space-x-8 md:space-y-0 md:justify-end md:p-0 md:shadow-none md:bg-transparent md:items-center': true,
-        '-translate-y-[300px] opacity-0 pointer-events-none': !isClicked && isSmallScreen,
-        'translate-y-0 opacity-100 pointer-events-auto': isClicked && isSmallScreen
-      }"
-      class="flex flex-col md:flex-row"
-    >
+  <!-- nav links -->
+  <div
+    [ngClass]="{
+    'absolute w-full bg-white left-0 top-20 space-y-4 p-6 text-center shadow-lg transition-all duration-500 ease-in-out': true,
+    'md:static md:flex md:space-x-8 md:space-y-0 md:justify-end md:p-0 md:shadow-none md:bg-transparent md:items-center': true,
+    '-translate-y-[300px] opacity-0 pointer-events-none': !isClicked && isSmallScreen,
+    'translate-y-0 opacity-100 pointer-events-auto': isClicked && isSmallScreen
+    }"
+    class="flex flex-col md:flex-row">
+    <a
+      (lick)="scrollToSection(homeSection); autoCloseMenu()"
+      class="text-textPrimary hover:text-secondary font-medium cursor-pointer">
+      Home
+    </a>
+    <a
+      (click)="scrollToSection(aboutSection); autoCloseMenu()"
+      class="text-textPrimary hover:text-secondary font-medium cursor-pointer">
+      About
+    </a>
       <a
-        (click)="scrollToSection(homeSection); autoCloseMenu()"
-        class="text-textPrimary hover:text-secondary font-medium cursor-pointer"
-      >Home</a>
-      <a
-        (click)="scrollToSection(aboutSection); autoCloseMenu()"
-        class="text-textPrimary hover:text-secondary font-medium cursor-pointer"
-      >About</a>
-      <a
-        (click)="scrollToSection(skillsSection); autoCloseMenu()"
-        class="text-textPrimary hover:text-secondary font-medium cursor-pointer"
-      >Skills</a>
-      <a
-        (click)="scrollToSection(projectsSection); autoCloseMenu()"
-        class="text-textPrimary hover:text-secondary font-medium cursor-pointer"
-      >Projects</a>
-      <a
-        (click)="scrollToSection(contactSection); autoCloseMenu()"
-        class="text-textPrimary hover:text-secondary font-medium cursor-pointer"
-      >Contact</a>
-    </div>
-  </nav>  
+      (click)="scrollToSection(skillsSection); autoCloseMenu()"
+      class="text-textPrimary hover:text-secondary font-medium cursor-pointer">
+      Skills
+    </a>
+    <a
+      (click)="scrollToSection(projectsSection); autoCloseMenu()"
+      class="text-textPrimary hover:text-secondary font-medium cursor-pointer">
+      Projects
+    </a>
+    <a
+      (click)="scrollToSection(contactSection); autoCloseMenu()"
+      class="text-textPrimary hover:text-secondary font-medium cursor-pointer">
+      Contact
+    </a>
+  </div>
+</nav>  
 
   <!-- home section -->
-  <div class="h-screen overflow-y-scroll scroll-snap-y scroll-snap-mandatory">
-    <section
+<div class="h-screen overflow-y-scroll scroll-snap-y scroll-snap-mandatory">
+  <section
     #home
-    class="h-screen scroll-snap-start bg-cover bg-center bg-[url('/assets/images/computer.jpg')] flex items-center justify-center"
-  >
-    <div class="bg-black bg-opacity-50 w-full h-full flex flex-col justify-center items-center text-center px-4 space-y-6">
-      
-      <h2 class="text-white text-xl sm:text-2xl md:text-3xl font-bold leading-relaxed max-w-xl">
-        Hello <span class="text-secondary"><i class="fas fa-hand"></i></span><br />
-        I am Hervé Mashukane. <br />
-        Glad to see <span class="text-primary animate-pulse"><i class="bi bi-eye-fill"></i></span> you!
+    class="h-screen scroll-snap-start bg-cover bg-center bg-[url('/assets/images/computer.jpg')] flex items-center justify-center">
+      <div class="bg-black bg-opacity-50 w-full h-full flex flex-col justify-center items-center text-center px-4 space-y-6">
+        <h2 class="text-white text-xl sm:text-2xl md:text-3xl font-bold leading-relaxed max-w-xl">
+          Hello <span class="text-secondary"><i class="fas fa-hand"></i></span><br/>
+          I am Hervé Mashukane. <br/>
+          Glad to see <span class="text-primary animate-pulse"><i class="bi bi-eye-fill"></i></span> you!
+        </h2>
+        <p class="text-white text-base sm:text-lg max-w-2xl leading-relaxed">
+          I'm a <span class="text-accent font-semibold">Front-End Developer</span> 
+          <i class="bi bi-laptop-fill text-primary"></i>, building user-friendly web apps with Angular, TypeScript, and more.
+        </p>
+    
+        <button
+          (click)="scrollToSection(projectsSection)"
+          class="bg-primary text-white px-6 py-2 rounded-full shadow-md hover:bg-blue-800 transition-colors font-semibold animate-pulse">
+          View Projects
+        </button>
+      </div>
+  </section>
+    
+
+  <!-- about section -->
+  <section 
+    #about 
+    class="h-screen scroll-snap-start bg-gray-200 flex items-center justify-center px-4 text-center shadow-xl">
+    <div class="flex flex-col items-center justify-center space-y-6 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold text-primary">
+        About Me
       </h2>
-  
-      <p class="text-white text-base sm:text-lg max-w-2xl leading-relaxed">
-        I'm a <span class="text-accent font-semibold">Front-End Developer</span> 
-        <i class="bi bi-laptop-fill text-primary"></i>, building user-friendly web apps with Angular, TypeScript, and more.
+
+      <p class="text-base md:text-lg text-textPrimary leading-relaxed">
+        I am a <span class="font-semibold text-primary">Web Developer</span> & Front-End Enthusiast, passionate about crafting 
+        user-centered applications using technologies like 
+        <span class="text-primary">
+          JavaScript
+        </span>, 
+        <span class="text-primary">
+          TypeScript
+        </span>, 
+        <span class="text-primary">
+          Angular
+        </span>, 
+        <span class="text-primary">
+          HTML
+        </span>, 
+        <span class="text-primary">
+          CSS
+        </span>, and 
+        <span class="text-primary">
+          Tailwind CSS
+        </span>.
+        <br />
+        I'm a fast learner, constantly evolving, and deeply committed to growth in the tech world.
       </p>
-  
-      <button
-        (click)="scrollToSection(projectsSection)"
-        class="bg-primary text-white px-6 py-2 rounded-full shadow-md hover:bg-blue-800 transition-colors font-semibold animate-pulse">
-        View Projects
-      </button>
-  
+    </div>
+  </section> 
+
+  <!-- skills section -->
+  <section 
+    #skills 
+    class="h-screen scroll-snap-start bg-gray-100 flex items-center justify-center px-4 text-center">
+    <div class="flex flex-col items-center justify-center space-y-8 w-full max-w-5xl">
+      <h2 class="text-2xl md:text-3xl font-bold text-primary">
+        Skills
+      </h2>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 w-full px-4">
+        <div class="text-textPrimary font-semibold bg-white shadow-md p-4 rounded-lg">
+          HTML
+          <div class="w-12 h-1 bg-primary mx-auto mt-2 rounded"></div>
+        </div>
+        <div class="text-textPrimary font-semibold bg-white shadow-md p-4 rounded-lg">
+          CSS
+          <div class="w-12 h-1 bg-primary mx-auto mt-2 rounded"></div>
+        </div>
+        <div class="text-textPrimary font-semibold bg-white shadow-md p-4 rounded-lg">
+          JavaScript
+          <div class="w-12 h-1 bg-primary mx-auto mt-2 rounded"></div>
+        </div>
+        <div class="text-textPrimary font-semibold bg-white shadow-md p-4 rounded-lg">
+          TypeScript
+          <div class="w-12 h-1 bg-primary mx-auto mt-2 rounded"></div>
+        </div>
+        <div class="text-textPrimary font-semibold bg-white shadow-md p-4 rounded-lg">
+          Angular
+          <div class="w-12 h-1 bg-primary mx-auto mt-2 rounded"></div>
+        </div>
+        <div class="text-textPrimary font-semibold bg-white shadow-md p-4 rounded-lg">
+          Tailwind CSS
+          <div class="w-12 h-1 bg-primary mx-auto mt-2 rounded"></div>
+        </div>
+      </div>
+
     </div>
   </section>
-  
 
-<!-- about section -->
-<section 
-  #about 
-  class="h-screen scroll-snap-start bg-gray-200 flex items-center justify-center px-4 text-center shadow-xl"
->
-  <div class="flex flex-col items-center justify-center space-y-6 max-w-3xl">
-
-    <h2 class="text-2xl md:text-3xl font-bold text-primary">
-      About Me
-    </h2>
-
-    <p class="text-base md:text-lg text-textPrimary leading-relaxed">
-      I am a <span class="font-semibold text-primary">Web Developer</span> & Front-End Enthusiast, passionate about crafting 
-      user-centered applications using technologies like 
-      <span class="text-primary">JavaScript</span>, 
-      <span class="text-primary">TypeScript</span>, 
-      <span class="text-primary">Angular</span>, 
-      <span class="text-primary">HTML</span>, 
-      <span class="text-primary">CSS</span>, and 
-      <span class="text-primary">Tailwind CSS</span>.
-      <br />
-      I'm a fast learner, constantly evolving, and deeply committed to growth in the tech world.
-    </p>
-
-  </div>
-</section> 
-
-<!-- skills section -->
-<section 
-  #skills 
-  class="h-screen scroll-snap-start bg-gray-100 flex items-center justify-center px-4 text-center"
->
-  <div class="flex flex-col items-center justify-center space-y-8 w-full max-w-5xl">
-
-    <h2 class="text-2xl md:text-3xl font-bold text-primary">
-      Skills
-    </h2>
-
-    <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 w-full px-4">
-      <div class="text-textPrimary font-semibold bg-white shadow-md p-4 rounded-lg">
-        HTML
-        <div class="w-12 h-1 bg-primary mx-auto mt-2 rounded"></div>
-      </div>
-      <div class="text-textPrimary font-semibold bg-white shadow-md p-4 rounded-lg">
-        CSS
-        <div class="w-12 h-1 bg-primary mx-auto mt-2 rounded"></div>
-      </div>
-      <div class="text-textPrimary font-semibold bg-white shadow-md p-4 rounded-lg">
-        JavaScript
-        <div class="w-12 h-1 bg-primary mx-auto mt-2 rounded"></div>
-      </div>
-      <div class="text-textPrimary font-semibold bg-white shadow-md p-4 rounded-lg">
-        TypeScript
-        <div class="w-12 h-1 bg-primary mx-auto mt-2 rounded"></div>
-      </div>
-      <div class="text-textPrimary font-semibold bg-white shadow-md p-4 rounded-lg">
-        Angular
-        <div class="w-12 h-1 bg-primary mx-auto mt-2 rounded"></div>
-      </div>
-      <div class="text-textPrimary font-semibold bg-white shadow-md p-4 rounded-lg">
-        Tailwind CSS
-        <div class="w-12 h-1 bg-primary mx-auto mt-2 rounded"></div>
-      </div>
+  <!-- projects section -->
+  <section #projcts class="h-screen scroll-snap-start flex flex-col items-center justify-center bg-white text-center px-4">
+    <div>
+      <h2 class="text-2xl md:text-3xl text-primary font-bold my-8">
+        Projects
+      </h2>
     </div>
 
-  </div>
-</section>
+    <div class="bg-primary w-full sm:w-[95%] md:w-[85%] lg:w-[75%] rounded-xl relative py-6 px-4 shadow-lg">
+      <!-- Left & Right Buttons -->
+      <div *ngIf="!isSmallScreen" class="absolute top-1/2 transform -translate-y-1/2 w-full flex justify-between items-center px-2 md:px-4">
+        <span
+          aria-label="Previous project"
+          class="text-2xl md:text-3xl cursor-pointer text-secondary hover:text-white transition duration-300"
+          (click)="previousProject()">
+          <i class="bi bi-chevron-double-left"></i>
+        </span>
 
-<section #projcts class="h-screen scroll-snap-start flex flex-col items-center justify-center bg-white text-center px-4">
-  <div>
-    <h2 class="text-2xl md:text-3xl text-primary font-bold my-8">
-      Projects
-    </h2>
-  </div>
-
-  <div class="bg-primary w-full sm:w-[95%] md:w-[85%] lg:w-[75%] rounded-xl relative py-6 px-4 shadow-lg">
-    <!-- Left & Right Buttons -->
-    <div class="absolute top-1/2 transform -translate-y-1/2 w-full flex justify-between px-6 text-secondary z-10">
-      <span aria-label="Previous project" class="text-2xl md:text-3xl cursor-pointer" (click)="previousProject()">
-        <i class="bi bi-chevron-double-left hover:text-white transition duration-300"></i>
-      </span>
-      <span aria-label="Next project" class="text-2xl md:text-3xl cursor-pointer" (click)="nextProject()">
-        <i class="bi bi-chevron-double-right hover:text-white transition duration-300"></i>
-      </span>
-    </div>
-
-    <!-- Project Content -->
-    <div class="flex flex-col-reverse md:flex-row items-center justify-around mt-8">
-      <!-- Project Text -->
-      <div class="text-white text-left md:text-center w-full md:w-[45%] px-4">
-        <h3 class="text-xl sm:text-2xl font-bold mb-4">
-          {{ projects[currentIndex].title }}
-        </h3>
-        <p class="mb-4 text-sm sm:text-base md:text-lg leading-relaxed">
-          {{ projects[currentIndex].text }}
-        </p>
-        <a [href]="projects[currentIndex].link" target="_blank" rel="noopener noreferrer"
-           class="inline-block bg-accent hover:bg-red-600 transition-colors px-6 py-2 rounded-full text-white font-semibold shadow-md">
-          {{ projects[currentIndex].btnText }}
-        </a>
+        <span
+          aria-label="Next project"
+          class="text-2xl md:text-3xl cursor-pointer text-secondary hover:text-white transition duration-300"
+          (click)="nextProject()">
+          <i class="bi bi-chevron-double-right"></i>
+        </span>
       </div>
 
-      <!-- Project Screenshot -->
-      <div class="w-full md:w-[45%] mb-6 md:mb-0">
-        <img [src]="projects[currentIndex].image" loading="lazy" alt="screenshot of project"
-             class="rounded-lg shadow-md w-[90%] md:w-full mx-auto">
+        <!-- Project Content -->
+      <div class="flex flex-col-reverse md:flex-row items-center justify-around mt-8">
+          <!-- Project Text -->
+        <div class="text-white text-left md:text-center w-full md:w-[45%] px-4">
+          <h3 class="text-xl sm:text-2xl font-bold mb-4">
+            {{ projects[currentIndex].title }}
+          </h3>
+          <p class="mb-4 text-sm sm:text-base md:text-lg leading-relaxed">
+            {{ projects[currentIndex].text }}
+          </p>
+          <a [href]="projects[currentIndex].link" target="_blank" rel="noopener noreferrer"
+            class="inline-block bg-accent hover:bg-red-600 transition-colors px-6 py-2 rounded-full text-white font-semibold shadow-md">
+            {{ projects[currentIndex].btnText }}
+          </a>
+        </div>
+
+          <!-- Project Screenshot -->
+        <div class="w-full md:w-[45%] mb-6 md:mb-0">
+          <img [src]="projects[currentIndex].image" loading="lazy" alt="screenshot of project"
+            class="rounded-lg shadow-md w-[90%] md:w-full mx-auto">
+          </div>
+        </div>
+
+        <!-- Navigation Dots -->
+        <div class="flex justify-center mt-6 space-x-2 sm:space-x-4">
+          <span 
+            *ngFor="let project of projects; let i = index"
+            class="w-3 h-3 rounded-full cursor-pointer transition-all duration-300"
+            [ngClass]="{
+              'bg-white opacity-50': i !== currentIndex,
+              'bg-accent scale-110': i === currentIndex
+            }"
+            (click)="goToProject(i)">
+          </span>
+        </div>
       </div>
+
+      <!-- connect With me -->
+      <div class="mt-5">
+        <button 
+          class="bg-accent hover:bg-red-600 text-white px-6 py-2 rounded-full transition-colors font-semibold shadow-md animate-pulse">
+          Let's Connect
+        </button>
+        <div class="mt-4 text-accent text-3xl">
+          <i class="bi bi-arrow-down"></i>
+        </div>
+
+          <!-- social icons -->
+        <div class="flex justify-center space-x-6 mt-4 text-primary text-2xl">
+          <a href="https://www.linkedin.com/in/herv%C3%A9-mashukane-9b104b304/" target="_blank" class="hover:text-accent transition">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a href="mailto:hervemashukane@gmail.com?subject=Inquiry from Your Website" target="_blank" class="hover:text-accent transition">
+            <i class="bi bi-envelope-fill"></i>
+          </a>
+          <a href="https://github.com/HerveMashukane" target="_blank" class="hover:text-accent transition">
+            <i class="bi bi-github"></i>
+          </a>
+        </div>
     </div>
+  </section>
 
-    <!-- Navigation Dots -->
-    <div class="flex justify-center mt-6 space-x-2">
-      <span 
-        *ngFor="let project of projects; let i = index"
-        class="w-3 h-3 rounded-full cursor-pointer transition-all duration-300"
-        [ngClass]="{
-          'bg-white opacity-50': i !== currentIndex,
-          'bg-accent scale-110': i === currentIndex
-        }"
-        (click)="goToProject(i)">
-      </span>
-    </div>
-  </div>
+  <!-- contact section -->
+  <section #contact class="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4 py-12 scroll-snap-start">
+    <h2 class="text-2xl md:text-3xl text-primary font-bold mb-6 my-6">Contact</h2>
 
-  <!-- connect With me -->
-  <div class="mt-5">
-    <button 
-      class="bg-accent hover:bg-red-600 text-white px-6 py-2 rounded-full transition-colors font-semibold shadow-md animate-pulse">
-      Let's Connect
-    </button>
-    <div class="mt-4 text-accent text-3xl">
-      <i class="bi bi-arrow-down"></i>
-    </div>
+    <!-- Contact Form -->
+    <form 
+      action="https://formspree.io/f/mjkwvbaw" 
+      method="POST"
+      ngNoForm
+      class="w-full sm:w-[80%] md:w-[50%] lg:w-[40%] bg-white shadow-lg rounded-xl p-6 space-y-5">
+      <!-- Name -->
+      <div class="flex flex-col">
+        <label for="name" class="mb-1 font-medium text-primary">Your Name</label>
+        <input 
+        id="name"
+        type="text" 
+        name="name" 
+        placeholder="e.g. Hervé Mashukane"
+        required
+        class="border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-primary transition duration-200">
+      </div>
 
-    <!-- social icons -->
-    <div class="flex justify-center space-x-6 mt-4 text-primary text-2xl">
-      <a href="https://www.linkedin.com/in/herv%C3%A9-mashukane-9b104b304/" target="_blank" class="hover:text-accent transition">
-        <i class="bi bi-linkedin"></i>
-      </a>
-      <a href="mailto:hervemashukane@gmail.com?subject=Inquiry from Your Website" target="_blank" class="hover:text-accent transition">
-        <i class="bi bi-envelope-fill"></i>
-      </a>
-      <a href="https://github.com/HerveMashukane" target="_blank" class="hover:text-accent transition">
-        <i class="bi bi-github"></i>
-      </a>
-    </div>
-  </div>
-</section>
+      <!-- Email -->
+      <div class="flex flex-col">
+        <label for="email" class="mb-1 font-medium text-primary">Your Email</label>
+        <input 
+        id="email"
+        type="email" 
+        name="email" 
+        placeholder="e.g. hervemashukane@gmail.com"
+        required
+        class="border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-primary transition duration-200">
+      </div>
 
-<!-- contact section -->
-<section #contact class="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4 py-12 scroll-snap-start">
-  <h2 class="text-2xl md:text-3xl text-primary font-bold mb-6 my-6">Contact</h2>
+      <!-- Message -->
+      <div class="flex flex-col">
+        <label for="message" class="mb-1 font-medium text-primary">Message</label>
+        <textarea 
+          id="message"
+          name="message" 
+          rows="5" 
+          placeholder="Type your message here..."
+          required
+          class="border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-primary transition duration-200 resize-none">
+        </textarea>
+      </div>
 
-  <!-- Contact Form -->
-  <form 
-  action="https://formspree.io/f/mjkwvbaw" 
-  method="POST"
-  ngNoForm
-  class="w-full sm:w-[80%] md:w-[50%] lg:w-[40%] bg-white shadow-lg rounded-xl p-6 space-y-5">
-
-  <!-- Name -->
-  <div class="flex flex-col">
-    <label for="name" class="mb-1 font-medium text-primary">Your Name</label>
-    <input 
-      id="name"
-      type="text" 
-      name="name" 
-      placeholder="e.g. Hervé Mashukane"
-      required
-      class="border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-primary transition duration-200">
-  </div>
-
-  <!-- Email -->
-  <div class="flex flex-col">
-    <label for="email" class="mb-1 font-medium text-primary">Your Email</label>
-    <input 
-      id="email"
-      type="email" 
-      name="email" 
-      placeholder="e.g. hervemashukane@gmail.com"
-      required
-      class="border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-primary transition duration-200">
-  </div>
-
-  <!-- Message -->
-  <div class="flex flex-col">
-    <label for="message" class="mb-1 font-medium text-primary">Message</label>
-    <textarea 
-      id="message"
-      name="message" 
-      rows="5" 
-      placeholder="Type your message here..."
-      required
-      class="border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-primary transition duration-200 resize-none">
-    </textarea>
-  </div>
-
-  <!-- Submit Button -->
-  <div class="text-center">
-    <button 
-      type="submit" 
-      class="bg-primary text-white font-semibold px-6 py-2 rounded-lg hover:bg-blue-800 transition-all duration-300 shadow-md">
-      Send Message
-    </button>
-  </div>
-</form>
-</section>
-  </div>
+      <!-- Submit Button -->
+      <div class="text-center">
+        <button 
+          type="submit"  
+          class="bg-primary text-white font-semibold px-6 py-2 rounded-lg hover:bg-blue-800 transition-all duration-300 shadow-md">
+          Send Message
+        </button>
+      </div>
+    </form>
+  </section>
+</div>
 
 <!-- footer Section -->
 <section class="bg-gray-700 text-white h-72 content-center space-y-10">
-    <!-- a copy of navbar links -->
-    <div class="space-x-4 text-center">
-        <a (click)="scrollToSection(homeSection)" 
-            class="text-white hover:text-secondary cursor-pointer">
-            Home
-        </a>
-        <a (click)="scrollToSection(aboutSection)" 
-            class="text-white hover:text-secondary cursor-pointer">
-            About
-        </a>
-        <a (click)="scrollToSection(skillsSection)" 
-            class="text-white hover:text-secondary cursor-pointer">
-            Skills
-        </a>
-        <a (click)="scrollToSection(projectsSection)" 
-            class="text-white hover:text-secondary cursor-pointer">
-            Projects
-        </a>
-        <a (click)="scrollToSection(contactSection)" 
-            class="text-white hover:text-secondary cursor-pointer">
-            Contact
-        </a>
-    </div>
-    <div class="flex justify-center space-x-4 text-white text-xl">
-        <!-- linkedin -->
-        <span class="cursor-pointer hover:-translate-y-1/4 transition-all">
-            <a href="https://www.linkedin.com/in/herv%C3%A9-mashukane-9b104b304/" t
-                arget="_blank" rel="noopener noreferrer">
-                <i class="bi bi-linkedin"></i>
-            </a>
-        </span>
-        <!-- email -->
-        <span class="cursor-pointer hover:-translate-y-1/4 transition-all">
-            <a href="mailto:hervemashukane@gmail.com?subject=Inquiry from Your Website" 
-                target="_blank">
-                <i class="bi bi-envelope-fill"></i>
-            </a>
-        </span>
-        <!-- github -->
-        <span class="cursor-pointer hover:-translate-y-1/4 transition-all">
-            <a href="https://github.com/HerveMashukane" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-github"></i>
-            </a>
-        </span>
-    </div>
-    <div class="text-center">
-        <p>
-            &copy;2025. Designed by <span class="text-primary"><i class="bi bi-heart-fill"></i></span> 
-            Hervé Mashukane | All rights reserved.
-        </p>
-    </div>
+  <!-- a copy of navbar links -->
+  <div class="space-x-4 text-center">
+    <a (click)="scrollToSection(homeSection)" 
+      class="text-white hover:text-secondary cursor-pointer">
+      Home
+    </a>
+    <a (click)="scrollToSection(aboutSection)" 
+      class="text-white hover:text-secondary cursor-pointer">
+      About
+    </a>
+    <a (click)="scrollToSection(skillsSection)" 
+      class="text-white hover:text-secondary cursor-pointer">
+      Skills
+    </a>
+    <a (click)="scrollToSection(projectsSection)" 
+      class="text-white hover:text-secondary cursor-pointer">
+      Projects
+    </a>
+    <a (click)="scrollToSection(contactSection)" 
+      class="text-white hover:text-secondary cursor-pointer">
+      Contact
+    </a>
+  </div>
+  <div class="flex justify-center space-x-4 text-white text-xl">
+    <!-- linkedin -->
+    <span class="cursor-pointer hover:-translate-y-1/4 transition-all">
+      <a href="https://www.linkedin.com/in/herv%C3%A9-mashukane-9b104b304/"
+        target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-linkedin"></i>
+      </a>
+    </span>
+    <!-- email -->
+    <span class="cursor-pointer hover:-translate-y-1/4 transition-all">
+      <a href="mailto:hervemashukane@gmail.com?subject=Inquiry from Your Website" 
+        target="_blank">
+        <i class="bi bi-envelope-fill"></i>
+      </a>
+    </span>
+    <!-- github -->
+    <span class="cursor-pointer hover:-translate-y-1/4 transition-all">
+      <a href="https://github.com/HerveMashukane" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-github"></i>
+      </a>
+    </span>
+  </div>
+  <div class="text-center">
+    <p>
+      &copy;2025. Designed by <span class="text-primary"><i class="bi bi-heart-fill"></i></span> 
+      Hervé Mashukane | All rights reserved.
+    </p>
+  </div>
 </section>
