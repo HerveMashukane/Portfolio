@@ -51,32 +51,36 @@
       >Contact</a>
     </div>
   </nav>  
-  <div class="h-screen overflow-y-scroll scroll-smooth scroll-snap-y scroll-snap-mandatory">
-    <!-- home section -->
-<section
-#home
-class="h-screen scroll-snap-start flex items-center justify-center bg-cover bg-center bg-[url('/assets/images/computer.jpg')]"
->
-<div class="bg-black bg-opacity-50 w-full h-full flex flex-col justify-center items-center text-center px-4 py-10 space-y-6">
-  <h2 class="text-white text-xl sm:text-2xl md:text-3xl font-bold leading-relaxed max-w-xl">
-    Hello <span class="text-secondary"><i class="fas fa-hand"></i></span><br />
-    I am Hervé Mashukane. <br />
-    Glad to see <span class="text-primary animate-pulse"><i class="bi bi-eye-fill"></i></span> you!
-  </h2>
-  
-  <p class="text-white text-base sm:text-lg max-w-2xl px-2 leading-relaxed">
-    I'm a <span class="text-accent font-semibold">Front-End Developer</span> 
-    <i class="bi bi-laptop-fill text-primary"></i>, building user-friendly web apps with Angular, TypeScript, and more.
-  </p>
 
-  <button
-    (click)="scrollToSection(projectsSection)"
-    class="bg-primary text-white px-6 py-2 rounded-xl shadow-md hover:bg-blue-800 transition animate-pulse"
+  <!-- home section -->
+  <div class="h-screen overflow-y-scroll scroll-snap-y scroll-snap-mandatory">
+    <section
+    #home
+    class="h-screen scroll-snap-start bg-cover bg-center bg-[url('/assets/images/computer.jpg')] flex items-center justify-center"
   >
-    View Projects
-  </button>
-</div>
-</section>
+    <div class="bg-black bg-opacity-50 w-full h-full flex flex-col justify-center items-center text-center px-4 space-y-6">
+      
+      <h2 class="text-white text-xl sm:text-2xl md:text-3xl font-bold leading-relaxed max-w-xl">
+        Hello <span class="text-secondary"><i class="fas fa-hand"></i></span><br />
+        I am Hervé Mashukane. <br />
+        Glad to see <span class="text-primary animate-pulse"><i class="bi bi-eye-fill"></i></span> you!
+      </h2>
+  
+      <p class="text-white text-base sm:text-lg max-w-2xl leading-relaxed">
+        I'm a <span class="text-accent font-semibold">Front-End Developer</span> 
+        <i class="bi bi-laptop-fill text-primary"></i>, building user-friendly web apps with Angular, TypeScript, and more.
+      </p>
+  
+      <button
+        (click)="scrollToSection(projectsSection)"
+        class="bg-primary text-white px-6 py-2 rounded-xl shadow-md hover:bg-blue-800 transition animate-pulse"
+      >
+        View Projects
+      </button>
+  
+    </div>
+  </section>
+  
 
 <!-- about section -->
 <section #about class="h-screen scroll-snap-start flex flex-col items-center justify-center bg-gray-200 text-center px-4">
