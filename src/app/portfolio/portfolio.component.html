@@ -73,8 +73,7 @@
   
       <button
         (click)="scrollToSection(projectsSection)"
-        class="bg-primary text-white px-6 py-2 rounded-xl shadow-md hover:bg-blue-800 transition animate-pulse"
-      >
+        class="bg-primary text-white px-6 py-2 rounded-full shadow-md hover:bg-blue-800 transition-colors font-semibold animate-pulse">
         View Projects
       </button>
   
@@ -206,9 +205,9 @@
   </div>
 
   <!-- connect With me -->
-  <div class="mt-10">
+  <div class="mt-5">
     <button 
-      class="bg-accent hover:bg-red-600 text-white px-6 py-2 rounded-xl shadow-md animate-pulse">
+      class="bg-accent hover:bg-red-600 text-white px-6 py-2 rounded-full transition-colors font-semibold shadow-md animate-pulse">
       Let's Connect
     </button>
     <div class="mt-4 text-accent text-3xl">
@@ -230,43 +229,63 @@
   </div>
 </section>
 
-<section class="h-screen flex flex-col items-center justify-center bg-gray-200 px-4">
-    <h2 class="text-primary text-2xl font-bold pb-4">Contact</h2>
-  
-    <form 
-      action="https://formspree.io/f/xwplgybw" 
-      method="POST"
-      class="flex flex-col w-full sm:w-[70%] md:w-[40%] space-y-4">
-  
+<!-- contact section -->
+<section #contact class="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4 py-12 scroll-snap-start">
+  <!-- Section Title -->
+  <h2 class="text-2xl md:text-3xl text-primary font-bold mb-6 my-6">Contact</h2>
+
+  <!-- Contact Form -->
+  <form 
+    action="https://formspree.io/f/xwplgybw" 
+    method="POST"
+    class="w-full sm:w-[80%] md:w-[50%] lg:w-[40%] bg-white shadow-lg rounded-xl p-6 space-y-5">
+
+    <!-- Name -->
+    <div class="flex flex-col">
+      <label for="name" class="mb-1 font-medium text-primary">Your Name</label>
       <input 
-        class="border border-gray-400 p-2 outline-none rounded" 
+        id="name"
         type="text" 
         name="name" 
-        placeholder="Your Name"
-        required>
-  
+        placeholder="e.g. Hervé Mashukane"
+        required
+        class="border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-primary transition duration-200">
+    </div>
+
+    <!-- Email -->
+    <div class="flex flex-col">
+      <label for="email" class="mb-1 font-medium text-primary">Your Email</label>
       <input 
-        class="border border-gray-400 p-2 outline-none rounded" 
+        id="email"
         type="email" 
         name="email" 
-        placeholder="Your Email"
-        required>
-  
+        placeholder="e.g. hervemashukane@gmail.com"
+        required
+        class="border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-primary transition duration-200">
+    </div>
+
+    <!-- Message -->
+    <div class="flex flex-col">
+      <label for="message" class="mb-1 font-medium text-primary">Message</label>
       <textarea 
+        id="message"
         name="message" 
-        rows="5"
-        placeholder="Type your message here..." 
-        class="border border-gray-400 p-2 outline-none rounded"
-        required></textarea>
-  
+        rows="5" 
+        placeholder="Type your message here..."
+        required
+        class="border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-primary transition duration-200 resize-none"></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="text-center">
       <button 
         type="submit" 
-        class="text-white bg-primary py-2 rounded-lg hover:bg-blue-800 transition duration-300">
-        Send
+        class="bg-primary text-white font-semibold px-6 py-2 rounded-lg hover:bg-blue-800 transition-all duration-300 shadow-md">
+        Send Message
       </button>
-    </form>
-  </section>  
-
+    </div>
+  </form>
+</section>
   </div>
 
 <!-- footer Section -->
