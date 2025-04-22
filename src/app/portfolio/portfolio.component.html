@@ -110,120 +110,123 @@
 </section> 
 
 <!-- skills section -->
-<section #skills class="h-screen scroll-snap-start flex flex-col items-center justify-center bg-gray-100 text-center px-4">
-  <div class="mb-6">
-    <h2 class="text-2xl md:text-3xl font-bold text-primary">Skills</h2>
-  </div>
-  
-  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-5xl mx-auto">
-    <div class="text-textPrimary font-semibold">
-      HTML
-      <div class="w-12 h-1 bg-primary mx-auto mt-1 rounded"></div>
-    </div>
-    <div class="text-textPrimary font-semibold">
-      CSS
-      <div class="w-12 h-1 bg-primary mx-auto mt-1 rounded"></div>
-    </div>
-    <div class="text-textPrimary font-semibold">
-      JavaScript
-      <div class="w-12 h-1 bg-primary mx-auto mt-1 rounded"></div>
-    </div>
-    <div class="text-textPrimary font-semibold">
-      TypeScript
-      <div class="w-12 h-1 bg-primary mx-auto mt-1 rounded"></div>
-    </div>
-    <div class="text-textPrimary font-semibold">
-      Angular
-      <div class="w-12 h-1 bg-primary mx-auto mt-1 rounded"></div>
-    </div>
-    <div class="text-textPrimary font-semibold">
-      Tailwind CSS
-      <div class="w-12 h-1 bg-primary mx-auto mt-1 rounded"></div>
-    </div>
-  </div>
-</section>  
+<section 
+  #skills 
+  class="h-screen scroll-snap-start bg-gray-100 flex items-center justify-center px-4 text-center"
+>
+  <div class="flex flex-col items-center justify-center space-y-8 w-full max-w-5xl">
 
-<!-- projects section -->
+    <h2 class="text-2xl md:text-3xl font-bold text-primary">
+      Skills
+    </h2>
+
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 w-full px-4">
+      <div class="text-textPrimary font-semibold bg-white shadow-md p-4 rounded-lg">
+        HTML
+        <div class="w-12 h-1 bg-primary mx-auto mt-2 rounded"></div>
+      </div>
+      <div class="text-textPrimary font-semibold bg-white shadow-md p-4 rounded-lg">
+        CSS
+        <div class="w-12 h-1 bg-primary mx-auto mt-2 rounded"></div>
+      </div>
+      <div class="text-textPrimary font-semibold bg-white shadow-md p-4 rounded-lg">
+        JavaScript
+        <div class="w-12 h-1 bg-primary mx-auto mt-2 rounded"></div>
+      </div>
+      <div class="text-textPrimary font-semibold bg-white shadow-md p-4 rounded-lg">
+        TypeScript
+        <div class="w-12 h-1 bg-primary mx-auto mt-2 rounded"></div>
+      </div>
+      <div class="text-textPrimary font-semibold bg-white shadow-md p-4 rounded-lg">
+        Angular
+        <div class="w-12 h-1 bg-primary mx-auto mt-2 rounded"></div>
+      </div>
+      <div class="text-textPrimary font-semibold bg-white shadow-md p-4 rounded-lg">
+        Tailwind CSS
+        <div class="w-12 h-1 bg-primary mx-auto mt-2 rounded"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <section #projcts class="h-screen scroll-snap-start flex flex-col items-center justify-center bg-white text-center px-4">
   <div>
-      <h2 class="text-xl md:text-2xl text-primary font-bold">
-          Projects
-      </h2>
+    <h2 class="text-2xl md:text-3xl text-primary font-bold my-8">
+      Projects
+    </h2>
   </div>
 
-  <div class="bg-primary md:w-[75%] mx-auto rounded-lg my-6 py-3 sm:w-full relative">
-      <!-- left & right btns -->
-      <div class="absolute top-1/2 w-full flex justify-between px-4 text-secondary">
-          <!-- left btn -->
-          <span aria-label="Previous project" class="md:text-xl cursor-pointer sm:text-base" (click)="previousProject()">
-              <i class="bi bi-chevron-double-left"></i>
-          </span>
-          <!-- right btn -->
-          <span aria-label="Next project" class="md:text-xl cursor-pointer sm:text-base" (click)="nextProject()">
-              <i class="bi bi-chevron-double-right"></i>
-          </span>
-      </div>
-      <div class="flex flex-col sm:flex-row justify-around items-center sm:items-start">
-          <div class="text-white content-center text-sm font-normal w-full sm:w-[40%] px-4 sm:px-0">
-              <h2 class="text-white text-xl font-bold py-4 sm:text-2xl md:text-3xl">
-                  {{ projects[currentIndex].title }}
-              </h2>
-              <p class="mb-4 px-8 sm:text-base md:text-[17px]">
-                  {{ projects[currentIndex].text }}
-              </p>
-              <a [href]="projects[currentIndex].link" target="_blank" rel="noopener noreferrer"
-                  class="text-white bg-accent px-4 py-2 shadow-lg w-32 mx-auto rounded-xl hover:bg-red-600 animate-pulse">
-                  {{ projects[currentIndex].btnText }}
-              </a>
-          </div>
+  <div class="bg-primary w-full sm:w-[95%] md:w-[85%] lg:w-[75%] rounded-xl relative py-6 px-4 shadow-lg">
+    <!-- Left & Right Buttons -->
+    <div class="absolute top-1/2 transform -translate-y-1/2 w-full flex justify-between px-6 text-secondary z-10">
+      <span aria-label="Previous project" class="text-2xl md:text-3xl cursor-pointer" (click)="previousProject()">
+        <i class="bi bi-chevron-double-left hover:text-white transition duration-300"></i>
+      </span>
+      <span aria-label="Next project" class="text-2xl md:text-3xl cursor-pointer" (click)="nextProject()">
+        <i class="bi bi-chevron-double-right hover:text-white transition duration-300"></i>
+      </span>
+    </div>
 
-          <!-- projects screenshots -->
-          <img [src]="projects[currentIndex].image" loading="lazy" alt="screenshot of project" class="w-[80%] sm:w-[40%] py-6 mx-auto sm:mx-0">
+    <!-- Project Content -->
+    <div class="flex flex-col-reverse md:flex-row items-center justify-around mt-8">
+      <!-- Project Text -->
+      <div class="text-white text-left md:text-center w-full md:w-[45%] px-4">
+        <h3 class="text-xl sm:text-2xl font-bold mb-4">
+          {{ projects[currentIndex].title }}
+        </h3>
+        <p class="mb-4 text-sm sm:text-base md:text-lg leading-relaxed">
+          {{ projects[currentIndex].text }}
+        </p>
+        <a [href]="projects[currentIndex].link" target="_blank" rel="noopener noreferrer"
+           class="inline-block bg-accent hover:bg-red-600 transition-colors px-6 py-2 rounded-full text-white font-semibold shadow-md">
+          {{ projects[currentIndex].btnText }}
+        </a>
       </div>
 
-      <!-- navigation dots -->
-      <div class="left-0 right-0 flex justify-center py-4">
-          <span class="w-3 h-3 mx-1 cursor-pointer rounded-full" 
-              *ngFor="let project of projects; let i = index" 
-              [ngClass]="{'bg-white': i !== currentIndex, 'bg-accent': i === currentIndex}" 
-              (click)="goToProject(i)">
-          </span>
+      <!-- Project Screenshot -->
+      <div class="w-full md:w-[45%] mb-6 md:mb-0">
+        <img [src]="projects[currentIndex].image" loading="lazy" alt="screenshot of project"
+             class="rounded-lg shadow-md w-[90%] md:w-full mx-auto">
       </div>
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="flex justify-center mt-6 space-x-2">
+      <span 
+        *ngFor="let project of projects; let i = index"
+        class="w-3 h-3 rounded-full cursor-pointer transition-all duration-300"
+        [ngClass]="{
+          'bg-white opacity-50': i !== currentIndex,
+          'bg-accent scale-110': i === currentIndex
+        }"
+        (click)="goToProject(i)">
+      </span>
+    </div>
   </div>
 
-  <!-- connect with me -->
-  <div>
-      <div class="flex flex-col justify-center">
-          <button 
-              class="text-white bg-accent px-2 py-2 mt-4 shadow-lg w-32 mx-auto rounded-xl hover:bg-red-600 animate-pulse">
-              Let's Connect
-          </button>
-          <br>
-          <span class="text-[30px] text-accent text-center">
-              <i class="bi bi-arrow-down"></i>
-          </span>
-      </div>
-      <!-- social media icons -->
-      <div class="flex justify-center space-x-4 text-primary text-xl">
-          <!-- linkedin -->
-          <span class="cursor-pointer animate-bounceLinkedIn">
-              <a href="https://www.linkedin.com/in/herv%C3%A9-mashukane-9b104b304/" target="_blank" rel="noopener noreferrer">
-                  <i class="bi bi-linkedin"></i>
-              </a>
-          </span>
-          <!-- email -->
-          <span class="cursor-pointer animate-bounceEmail">
-              <a href="mailto:hervemashukane@gmail.com?subject=Inquiry from Your Website" target="_blank">
-                  <i class="bi bi-envelope-fill"></i>
-              </a>
-          </span>
-          <!-- github -->
-          <span class="cursor-pointer animate-bounceGitHub">
-              <a href="https://github.com/HerveMashukane" target="_blank" rel="noopener noreferrer">
-                  <i class="bi bi-github"></i>
-              </a>
-          </span>
-      </div>
+  <!-- connect With me -->
+  <div class="mt-10">
+    <button 
+      class="bg-accent hover:bg-red-600 text-white px-6 py-2 rounded-xl shadow-md animate-pulse">
+      Let's Connect
+    </button>
+    <div class="mt-4 text-accent text-3xl">
+      <i class="bi bi-arrow-down"></i>
+    </div>
+
+    <!-- social icons -->
+    <div class="flex justify-center space-x-6 mt-4 text-primary text-2xl">
+      <a href="https://www.linkedin.com/in/herv%C3%A9-mashukane-9b104b304/" target="_blank" class="hover:text-accent transition">
+        <i class="bi bi-linkedin"></i>
+      </a>
+      <a href="mailto:hervemashukane@gmail.com?subject=Inquiry from Your Website" target="_blank" class="hover:text-accent transition">
+        <i class="bi bi-envelope-fill"></i>
+      </a>
+      <a href="https://github.com/HerveMashukane" target="_blank" class="hover:text-accent transition">
+        <i class="bi bi-github"></i>
+      </a>
+    </div>
   </div>
 </section>
 
