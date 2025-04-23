@@ -39,26 +39,31 @@ export class PortfolioComponent {
     },
 
   ]
-  // check screen size
-  @HostListener('window:resize', ['$event'])
-  CheckScreenSize() {
-    this.isSmallScreen = window.innerWidth < 768;
-  }
+  
+ngOnInit() {
+  this.CheckScreenSize(); // make sure isSmallScreen is set on load
+}
 
-  // toggle menu
-  toggleMenu() {
+// check screen size
+@HostListener('window:resize', ['$event'])
+CheckScreenSize() {
+  this.isSmallScreen = window.innerWidth < 768;
+}
+
+// toggle menu only on small screens
+toggleMenu() {
+  if (this.isSmallScreen) {
     this.isClicked = !this.isClicked;
-    if(!this.isSmallScreen) {
-      this.isClicked = true;
-    }
   }
+}
 
-  // close the menu automatically on sm screens when clicked
-  autoCloseMenu(): void {
-    if (this.isSmallScreen) {
-      this.isClicked = false;
-    }
-  }  
+// close menu automatically after clicking a link
+autoCloseMenu(): void {
+  if (this.isSmallScreen) {
+    this.isClicked = false;
+  }
+}
+
 
   // projects dots navigation
   currentIndex = 0;
