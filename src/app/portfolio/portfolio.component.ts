@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, viewChild, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
@@ -41,7 +41,7 @@ export class PortfolioComponent {
   ]
   
 ngOnInit() {
-  this.CheckScreenSize(); // make sure isSmallScreen is set on load
+  this.CheckScreenSize();
 }
 
 // check screen size
@@ -63,7 +63,6 @@ autoCloseMenu(): void {
     this.isClicked = false;
   }
 }
-
 
   // projects dots navigation
   currentIndex = 0;

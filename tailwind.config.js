@@ -13,14 +13,9 @@ module.exports = {
       },
       keyframes: {
         // logo animation
-        // pulseLogo: {
-        //   '0%, 90%, 100%': {transform: 'rotate(0deg)'},
-        //   '90%': {transform: 'rotate(360deg)'}
-        // },
-        // navbar animation
-        bounceNav: {
-          '0%, 100%': {transform: 'translateX(0)'},
-          '90%': {transform: 'translateX(-10px)'}
+        pulseLogo: {
+          '0%, 90%, 100%': {transform: 'rotate(0deg)'},
+          '90%': {transform: 'rotate(360deg)'}
         },
         // social media icons animations
         bounceLinkedIn: {
@@ -38,8 +33,7 @@ module.exports = {
       },
       // animations calls
       animation: {
-        pulseLogo: 'pulseLogo 3s ease-in-out infinite',
-        bounceNav: 'bounceNav 2s ease infinite',
+        pulseLogo: 'pulseLogo 3s ease infinite',
         bounceLinkedIn: 'bounceLinkedIn 3s ease infinite',
         bounceEmail: 'bounceEmail 1s ease infinite',
         bounceGitHub: 'bounceGitHub 3s ease infinite'
