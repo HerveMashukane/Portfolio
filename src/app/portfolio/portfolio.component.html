@@ -311,9 +311,9 @@
 </div>
 
 <!-- footer section -->
-<footer class="bg-gray-700 text-white h-80 flex flex-col justify-center items-center space-y-10">
-  <!-- links -->
-  <div class="flex flex-wrap justify-center gap-6 text-center">
+<footer class="bg-gray-700 text-white h-auto py-10 px-4 flex flex-col items-center space-y-10">
+  <!-- navigation links -->
+  <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-center text-sm sm:text-base">
     <a (click)="scrollToSection(homeSection)" 
       class="hover:text-secondary cursor-pointer transition duration-200">
       Home
@@ -336,31 +336,32 @@
     </a>
   </div>
 
-  <!-- Social Icons -->
-  <div class="flex justify-center gap-6 text-xl">
-    <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/in/herv%C3%A9-mashukane-9b104b304/" target="_blank" rel="noopener noreferrer"
+  <!-- my social media -->
+  <div class="flex flex-wrap justify-center gap-6 text-xl">
+    <!-- linkedIn -->
+    <a href="https://www.linkedin.com/in/herv%C3%A9-mashukane-9b104b304/" 
+       target="_blank" rel="noopener noreferrer"
        class="hover:-translate-y-1 transition-transform">
       <i class="bi bi-linkedin"></i>
     </a>
-    <!-- Email -->
-    <a href="mailto:hervemashukane@gmail.com?subject=Inquiry from Your Website" target="_blank"
+    <!-- email -->
+    <a href="mailto:hervemashukane@gmail.com?subject=Inquiry from Your Website" 
+       target="_blank"
        class="hover:-translate-y-1 transition-transform">
       <i class="bi bi-envelope-fill"></i>
     </a>
     <!-- GitHub -->
-    <a href="https://github.com/HerveMashukane" target="_blank" rel="noopener noreferrer"
+    <a href="https://github.com/HerveMashukane" 
+       target="_blank" rel="noopener noreferrer"
        class="hover:-translate-y-1 transition-transform">
       <i class="bi bi-github"></i>
     </a>
   </div>
 
-  <!-- Copyright -->
-  <div class="text-center px-4 text-sm">
+  <div class="text-center px-4 text-xs sm:text-sm">
     <p>
-      &copy;2025. Designed with 
-      <span class="text-primary"><i class="bi bi-heart-fill"></i></span> 
-      by Hervé Mashukane | All rights reserved.
+      &copy;2025. Designed by <span class="text-primary"><i class="bi bi-heart-fill"></i></span> 
+      Hervé Mashukane | All rights reserved.
     </p>
   </div>
 </footer>
