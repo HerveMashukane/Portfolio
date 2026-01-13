@@ -1,83 +1,69 @@
-<!-- boostrap link -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-<!-- font awesome link -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 <!-- navbar -->
-<nav class="flex items-center justify-between px-6 md:px-12 py-4 relative bg-white shadow-md z-50">
-    <!-- logo -->
-  <div class="text-primary text-3xl font-bold tracking-wide my-4 animate-pulseLogo">
-    Hervé
+<nav class="sticky top-0 z-50 backdrop-blur-md bg-white/70 shadow-md transition-all duration-300">
+  <div class="flex items-center justify-between px-6 md:px-12 py-4">
+    <!-- Logo -->
+    <img src="/assets/images/logo.svg" alt="Hervé Logo" class="w-12 h-12 animate-pulseLogo">
+
+    <!-- Mobile menu button -->
+    <div class="md:hidden">
+      <button (click)="toggleMenu()" class="text-primary text-3xl">
+        <i [ngClass]="isClicked ? 'bi bi-x' : 'bi bi-list'"></i>
+      </button>
+    </div>
+
+    <!-- Menu Links -->
+    <div
+      [ngClass]="{
+        'absolute w-full left-0 top-full bg-white/95 backdrop-blur-md shadow-lg transition-transform duration-500 ease-in-out md:static md:flex md:space-x-8 md:shadow-none md:bg-transparent': true,
+        'translate-y-[-100%] opacity-0 pointer-events-none': !isClicked && isSmallScreen,
+        'translate-y-0 opacity-100 pointer-events-auto': isClicked && isSmallScreen
+      }"
+      class="flex flex-col md:flex-row md:items-center md:justify-end md:space-y-0 space-y-4 p-6 md:p-0">
+      
+      <a (click)="scrollToSection(homeSection); autoCloseMenu()" 
+         class="group relative text-textPrimary font-medium cursor-pointer transition-colors duration-300 hover:text-secondary">
+         Home
+         <span class="absolute left-0 bottom-0 h-0.5 w-0 bg-secondary transition-all group-hover:w-full"></span>
+      </a>
+      <a (click)="scrollToSection(aboutSection); autoCloseMenu()" 
+         class="group relative text-textPrimary font-medium cursor-pointer transition-colors duration-300 hover:text-secondary">
+         About
+         <span class="absolute left-0 bottom-0 h-0.5 w-0 bg-secondary transition-all group-hover:w-full"></span>
+      </a>
+      <a (click)="scrollToSection(skillsSection); autoCloseMenu()" 
+         class="group relative text-textPrimary font-medium cursor-pointer transition-colors duration-300 hover:text-secondary">
+         Skills
+         <span class="absolute left-0 bottom-0 h-0.5 w-0 bg-secondary transition-all group-hover:w-full"></span>
+      </a>
+      <a (click)="scrollToSection(projectsSection); autoCloseMenu()" 
+         class="group relative text-textPrimary font-medium cursor-pointer transition-colors duration-300 hover:text-secondary">
+         Projects
+         <span class="absolute left-0 bottom-0 h-0.5 w-0 bg-secondary transition-all group-hover:w-full"></span>
+      </a>
+      <a (click)="scrollToSection(contactSection); autoCloseMenu()" 
+         class="group relative text-textPrimary font-medium cursor-pointer transition-colors duration-300 hover:text-secondary">
+         Contact
+         <span class="absolute left-0 bottom-0 h-0.5 w-0 bg-secondary transition-all group-hover:w-full"></span>
+      </a>
+    </div>
   </div>
-  
-  <!-- menu button (visible on small screens only) -->
-  <div class="md:hidden">
-    <button 
-      class="text-primary text-3xl" 
-      [ngClass]="{ 'bi bi-x': isClicked, 'bi bi-list': !isClicked }"
-      (click)="toggleMenu()">
-    </button>
-  </div>
-  
-  <!-- nav links -->
-  <div
-    [ngClass]="{
-    'absolute w-full bg-white left-0 top-20 space-y-4 p-6 text-center shadow-lg transition-all duration-500 ease-in-out': true,
-    'md:static md:flex md:space-x-8 md:space-y-0 md:justify-end md:p-0 md:shadow-none md:bg-transparent md:items-center': true,
-    '-translate-y-[300px] opacity-0 pointer-events-none': !isClicked && isSmallScreen,
-    'translate-y-0 opacity-100 pointer-events-auto': isClicked && isSmallScreen
-    }"
-    class="flex flex-col md:flex-row">
-    <a
-      (click)="scrollToSection(homeSection); autoCloseMenu()"
-      class="text-textPrimary hover:text-secondary font-medium cursor-pointer">
-      Home
-    </a>
-    <a
-      (click)="scrollToSection(aboutSection); autoCloseMenu()"
-      class="text-textPrimary hover:text-secondary font-medium cursor-pointer">
-      About
-    </a>
-      <a
-      (click)="scrollToSection(skillsSection); autoCloseMenu()"
-      class="text-textPrimary hover:text-secondary font-medium cursor-pointer">
-      Skills
-    </a>
-    <a
-      (click)="scrollToSection(projectsSection); autoCloseMenu()"
-      class="text-textPrimary hover:text-secondary font-medium cursor-pointer">
-      Projects
-    </a>
-    <a
-      (click)="scrollToSection(contactSection); autoCloseMenu()"
-      class="text-textPrimary hover:text-secondary font-medium cursor-pointer">
-      Contact
-    </a>
-  </div>
-</nav>  
+</nav>
 
   <!-- home section -->
 <div class="h-screen overflow-y-scroll scroll-snap-y scroll-snap-mandatory">
-  <section
-    #home
-    class="h-screen scroll-snap-start bg-cover bg-center bg-[url('/assets/images/computer.jpg')] flex items-center justify-center">
-      <div class="bg-black bg-opacity-50 w-full h-full flex flex-col justify-center items-center text-center px-4 space-y-6">
-        <h2 class="text-white text-xl sm:text-2xl md:text-3xl font-bold leading-relaxed max-w-xl">
-          Hello <span class="text-secondary"><i class="fas fa-hand"></i></span><br/>
-          I am Hervé Mashukane. <br/>
-          Glad to see <span class="text-primary animate-pulse"><i class="bi bi-eye-fill"></i></span> you!
-        </h2>
-        <p class="text-white text-base sm:text-lg max-w-2xl leading-relaxed">
-          I'm a <span class="text-accent font-semibold">Front-End Developer</span> 
-          <i class="bi bi-laptop-fill text-primary"></i>, building user-friendly web apps with Angular, TypeScript, and more.
-        </p>
-    
-        <button
-          (click)="scrollToSection(projectsSection)"
-          class="bg-primary text-white px-6 py-2 rounded-full shadow-md hover:bg-blue-800 transition-colors font-semibold animate-pulse">
-          View Projects
-        </button>
-      </div>
+  <section #home class="h-screen flex items-center justify-center relative bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="relative z-10 text-center px-4 space-y-6">
+      <h1 class="text-white text-3xl sm:text-4xl md:text-5xl font-bold">
+        Hello <span class="text-secondary"><i class="fas fa-hand"></i></span> I'm <span class="text-primary">Hervé Mashukane</span>
+      </h1>
+      <p class="text-white text-lg sm:text-xl max-w-2xl mx-auto">
+        Front-End Developer building <span class="font-semibold text-accent">modern, responsive</span> web applications using Angular, TypeScript, and Tailwind CSS.
+      </p>
+      <button (click)="scrollToSection(projectsSection)" class="bg-accent hover:bg-red-600 px-6 py-3 rounded-full text-white font-semibold shadow-lg transition-all duration-300">
+        See My Projects
+      </button>
+    </div>
   </section>
     
 

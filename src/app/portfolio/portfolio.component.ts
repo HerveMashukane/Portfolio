@@ -12,33 +12,35 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 export class PortfolioComponent {
   isClicked: boolean = false;
   isSmallScreen: boolean = false;
-  projects:any = [
-    {
-      id: 1,
-      title: 'Foodera',
-      text: 'A sample screenshot of an interactive Web application for food, built in Angular, TypeScript and Tailwind CSS, with a caroussel implementation for clients testmonials and responsive on multiple devices.',
-      image: '/assets/images/foodieApp.png',
-      btnText: 'Full Project',
-      link: 'https://herve-foodieapp.netlify.app/'
-    },
-    {
-      id: 2,
-      title: 'HiroMate Dashboard',
-      text: 'A sample screenshot of an interactive, dynamic and responsive students dashboard of a company named HiroMate, built in Angular, TypeScript and Tailwind CSS, having a student form, adds new students, displays their details, removes, updates, toggle their status and saves them.',
-      image: '/assets/images/studentDashboard.png',
-      btnText: 'Full Project',
-      link: 'https://herve-hiromate.netlify.app/'
-    },
-    {
-      id: 3,
-      title: 'Portfolio',
-      text: 'Screenshot of a fully responsive personal portfolio built in Angular, TypeScript and Tailwind CSS.',
-      image: '/assets/images/portfolio.png',
-      btnText: 'Full Project',
-      link: 'https://herve-portfolio.netlify.app/'
-    },
-
-  ]
+  projects: any = [
+  {
+    id: 1,
+    title: 'AlliaStore',
+    text: 'A production Angular e-commerce app with Supabase backend, live in the market. Features authentication, role-based admin controls, and dynamic product management.',
+    image: '/assets/images/alliaStore.png',
+    link: 'https://allia-store.netlify.app',
+    btnText: 'View Project',
+    tech: ['Angular', 'Supabase', 'Tailwind CSS', 'TypeScript']
+  },
+  {
+    id: 2,
+    title: 'Foodera',
+    text: 'Interactive web app for food services, built with Angular, Tailwind CSS, and TypeScript. Features carousel for client testimonials and fully responsive design.',
+    image: '/assets/images/foodieApp.png',
+    link: 'https://herve-foodieapp.netlify.app/',
+    btnText: 'View Project',
+    tech: ['Angular', 'Tailwind CSS', 'TypeScript']
+  },
+  {
+    id: 3,
+    title: 'HiroMate Dashboard',
+    text: 'Dynamic students dashboard with add/update/remove functionality, built using Angular, Tailwind CSS, and TypeScript. Fully responsive and interactive.',
+    image: '/assets/images/studentDashboard.png',
+    link: 'https://herve-hiromate.netlify.app/',
+    btnText: 'View Project',
+    tech: ['Angular', 'Tailwind CSS', 'TypeScript']
+  }
+];
   
 ngOnInit() {
   this.CheckScreenSize();
