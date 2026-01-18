@@ -6,10 +6,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#2563EB",      // Blue
+        primary: "#1E293B",      // Dark Slate Gray
         secondary: "#FACC15",    // Amber Yellow
-        textPrimary: "#1E293B",  // Slate Gray
         accent: "#EF4444",       // Red
+        textPrimary: "#F8FAFC",  // Light text
+        cardBg: "#111827",       // Dark card background
       },
       keyframes: {
         pulseLogo: {
@@ -18,19 +19,15 @@ module.exports = {
         },
         bounceLinkedIn: {
           '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' }
+          '50%': { transform: 'translateY(-6px)' }
         },
         bounceEmail: {
           '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' }
+          '50%': { transform: 'translateY(-6px)' }
         },
         bounceGitHub: {
           '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' }
-        },
-        gradientX: {
-          '0%, 100%': { 'background-position': '0% 50%' },
-          '50%': { 'background-position': '100% 50%' },
+          '50%': { transform: 'translateY(-6px)' }
         },
         underlineGrow: {
           '0%': { width: '0%' },
@@ -42,7 +39,6 @@ module.exports = {
         bounceLinkedIn: 'bounceLinkedIn 3s ease infinite',
         bounceEmail: 'bounceEmail 3s ease infinite',
         bounceGitHub: 'bounceGitHub 3s ease infinite',
-        gradientX: 'gradientX 15s ease infinite',
         underlineGrow: 'underlineGrow 0.3s ease forwards'
       }
     },
