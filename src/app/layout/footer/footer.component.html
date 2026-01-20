@@ -1,1 +1,19 @@
-<p>footer works!</p>
+<!-- Footer -->
+<footer class="border-t border-gray-600 bg-primary text-textPrimary py-10 px-4 flex flex-col items-center space-y-10">
+  <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-center text-sm sm:text-base">
+    <a (click)="scrollToSection(homeSection)" class="hover:text-secondary cursor-pointer transition duration-200">Home</a>
+    <a (click)="scrollToSection(aboutSection)" class="hover:text-secondary cursor-pointer transition duration-200">About</a>
+    <a (click)="scrollToSection(skillsSection)" class="hover:text-secondary cursor-pointer transition duration-200">Skills</a>
+    <a (click)="scrollToSection(projectsSection)" class="hover:text-secondary cursor-pointer transition duration-200">Projects</a>
+    <a (click)="scrollToSection(contactSection)" class="hover:text-secondary cursor-pointer transition duration-200">Contact</a>
+  </div>
+
+  <div class="flex flex-wrap justify-center gap-6 text-xl">
+    <a href="https://www.linkedin.com/in/herv%C3%A9-mashukane-9b104b304/" target="_blank" class="hover:-translate-y-1 transition-transform"><i class="bi bi-linkedin"></i></a>
+    <a href="mailto:hervemashukane@gmail.com" class="hover:-translate-y-1 transition-transform"><i class="bi bi-envelope-fill"></i></a>
+    <a href="https://github.com/HerveMashukane" target="_blank" class="hover:-translate-y-1 transition-transform"><i class="bi bi-github"></i></a>
+  </div>
+  <div class="text-center px-4 text-xs sm:text-sm">
+    <p>&copy;2026 Designed with <span class="text-accent"><i class="bi bi-heart-fill"></i></span> by Hervé Mashukane <i class="bi bi-star-fill text-secondary"></i> | All rights reserved.</p>
+  </div>
+</footer>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-home-page',
@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class HomePageComponent {
 
+  @ViewChild('projcts') projectsSection!: ElementRef;
+
+  scrollToSection(section: ElementRef) {
+    section.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }
