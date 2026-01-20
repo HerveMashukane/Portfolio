@@ -6,10 +6,11 @@ import { SkillsPageComponent } from './pages/skills-page/skills-page.component';
 import { ProjectsPageComponent } from './pages/projects-page/projects-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { AboutPageComponent } from "./pages/about-page/about-page.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, HomePageComponent, SkillsPageComponent, ProjectsPageComponent, ContactPageComponent, FooterComponent],
+  imports: [RouterOutlet, NavbarComponent, HomePageComponent, AboutPageComponent, SkillsPageComponent, ProjectsPageComponent, ContactPageComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,9 +1,10 @@
 <!-- Skills -->
-<section #skills class="h-screen scroll-snap-start bg-gray-800 flex items-center justify-center px-4">
+<section class="h-screen scroll-snap-start bg-gray-800 flex items-center justify-center px-4">
   <div class="flex flex-col items-center space-y-8 w-full max-w-5xl">
     <h2 class="text-3xl font-bold text-accent">Skills</h2>
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 w-full px-4">
-      <div *ngFor="let skill of ['HTML','CSS','JavaScript','TypeScript','Angular','Tailwind CSS','React','Supabase']" class="bg-cardBg p-4 rounded-lg shadow-md shadow-gray-600 text-textPrimary font-semibold hover:translate-x-2 hover:shadow-lg hover:shadow-textPrimary">
+      <div *ngFor="let skill of ['HTML','CSS','JavaScript','TypeScript','Angular','Tailwind CSS','React','Supabase']" 
+        class="bg-cardBg p-4 rounded-lg shadow-md shadow-gray-600 text-textPrimary font-semibold hover:translate-x-2 hover:shadow-lg hover:shadow-textPrimary">
         {{ skill }}
         <div class="w-12 h-1 bg-secondary mx-auto mt-2 rounded"></div>
       </div>

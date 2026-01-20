@@ -1,21 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
   isClicked: boolean = false;
   isSmallScreen: boolean = false;
-
-  @ViewChild('home') homeSection!: ElementRef;
-  @ViewChild('about') aboutSection!: ElementRef;
-  @ViewChild('skills') skillsSection!: ElementRef;
-  @ViewChild('projcts') projectsSection!: ElementRef;
-  @ViewChild('contact') contactSection!: ElementRef;
 
   ngOnInit() {
     this.CheckScreenSize();
@@ -36,9 +31,5 @@ export class NavbarComponent {
     if (this.isSmallScreen) {
       this.isClicked = false;
     }
-  }
-
-  scrollToSection(section: ElementRef) {
-    section.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }

@@ -17,23 +17,23 @@
       }"
       class="flex flex-col md:flex-row md:items-center md:justify-center md:space-y-0 space-y-4 p-6 md:p-0 text-textPrimary">
       
-      <a (click)="scrollToSection(homeSection); autoCloseMenu()" class="group relative font-bold cursor-pointer transition-colors duration-300 hover:text-secondary">
+      <a (click)="autoCloseMenu()" class="group relative font-bold cursor-pointer transition-colors duration-300 hover:text-secondary">
         Home
         <span class="absolute left-0 bottom-0 h-0.5 w-0 bg-secondary transition-all group-hover:w-full"></span>
       </a>
-      <a (click)="scrollToSection(aboutSection); autoCloseMenu()" class="group relative font-bold cursor-pointer transition-colors duration-300 hover:text-secondary">
+      <a routerLink="/about" (click)="autoCloseMenu()" class="group relative font-bold cursor-pointer transition-colors duration-300 hover:text-secondary">
         About
         <span class="absolute left-0 bottom-0 h-0.5 w-0 bg-secondary transition-all group-hover:w-full"></span>
       </a>
-      <a (click)="scrollToSection(skillsSection); autoCloseMenu()" class="group relative font-bold cursor-pointer transition-colors duration-300 hover:text-secondary">
+      <a routerLink="/skills" (click)="autoCloseMenu()" class="group relative font-bold cursor-pointer transition-colors duration-300 hover:text-secondary">
         Skills
         <span class="absolute left-0 bottom-0 h-0.5 w-0 bg-secondary transition-all group-hover:w-full"></span>
       </a>
-      <a (click)="scrollToSection(projectsSection); autoCloseMenu()" class="group relative font-bold cursor-pointer transition-colors duration-300 hover:text-secondary">
+      <a (click)="autoCloseMenu()" class="group relative font-bold cursor-pointer transition-colors duration-300 hover:text-secondary">
         Projects
         <span class="absolute left-0 bottom-0 h-0.5 w-0 bg-secondary transition-all group-hover:w-full"></span>
       </a>
-      <a (click)="scrollToSection(contactSection); autoCloseMenu()" class="group relative font-bold cursor-pointer transition-colors duration-300 hover:text-secondary">
+      <a (click)="autoCloseMenu()" class="group relative font-bold cursor-pointer transition-colors duration-300 hover:text-secondary">
         Contact
         <span class="absolute left-0 bottom-0 h-0.5 w-0 bg-secondary transition-all group-hover:w-full"></span>
       </a>
