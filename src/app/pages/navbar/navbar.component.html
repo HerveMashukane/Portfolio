@@ -2,20 +2,27 @@
 <nav class="sticky top-0 z-50 backdrop-blur-md bg-primary/90 shadow-md transition-all duration-300">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
     <div class="flex h-16 md:h-20 items-center justify-between">
-
-      <!-- Brand -->
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 md:w-12 md:h-12">
-          <img
-            src="/assets/images/herve.jpg"
-            alt="Hervé Mashukane"
-            class="rounded-full border border-secondary object-cover"
-          />
+      
+    <div class="relative inline-block">
+      <img 
+        src="/assets/images/herve.jpg" 
+        alt="HerveMashukane profile"
+        class="object-center w-10 h-10 rounded-full cursor-pointer"
+      >
+      <!-- online indicator with hover group -->
+      <div class="absolute bottom-0 right-0 cursor-pointer">
+        <div class="relative group">
+          <div class="w-3 h-3 bg-green-600 border-2 border-white rounded-full"></div>
+          
+          <!-- tooltip -->
+          <div 
+            class="absolute -bottom-2 right-0 hidden group-hover:block 
+            bg-blue-500 text-white text-xs p-1 rounded-lg whitespace-nowrap shadow">
+            Online
+          </div>
         </div>
-        <span class="hidden sm:block font-semibold tracking-wide text-textPrimary">
-          Hervé Mashukane
-        </span>
       </div>
+    </div>
 
       <!-- Desktop Nav -->
       <div class="hidden md:flex items-center gap-10 text-textPrimary font-medium">
