@@ -27,7 +27,7 @@
       <!-- Desktop Nav -->
       <div class="hidden md:flex items-center gap-10 text-textPrimary font-medium">
         <a
-          routerLink="/"
+          href="#home"
           routerLinkActive="text-secondary"
           class="relative group hover:text-secondary transition-colors"
         >
@@ -36,8 +36,7 @@
         </a>
 
         <a
-          routerLink="/about"
-          routerLinkActive="text-secondary"
+          href="#about"
           class="relative group hover:text-secondary transition-colors"
         >
           About
@@ -45,8 +44,7 @@
         </a>
 
         <a
-          routerLink="/skills"
-          routerLinkActive="text-secondary"
+          href="#skills"
           class="relative group hover:text-secondary transition-colors"
         >
           Skills
@@ -54,8 +52,7 @@
         </a>
 
         <a
-          routerLink="/projects"
-          routerLinkActive="text-secondary"
+          href="#projects"
           class="relative group hover:text-secondary transition-colors"
         >
           Projects
@@ -63,8 +60,7 @@
         </a>
 
         <a
-          routerLink="/contact"
-          routerLinkActive="text-secondary"
+          href="#contact"
           class="relative group hover:text-secondary transition-colors"
         >
           Contact
@@ -101,7 +97,7 @@
   <!-- Mobile Menu -->
   <div
     *ngIf="isClicked"
-    class="md:hidden bg-primary/95 backdrop-blur-md shadow-lg border-t border-white/10"
+    class="md:hidden bg-primary/95 backdrop-blur-md shadow-lg border-t border-white/10 animate-underlineGrow"
   >
     <div class="flex flex-col items-center gap-6 py-8 text-textPrimary font-semibold">
       <a routerLink="/" (click)="autoCloseMenu()" class="hover:text-secondary">Home</a>
