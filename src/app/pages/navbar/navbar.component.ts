@@ -29,4 +29,8 @@ export class NavbarComponent implements OnInit {
       this.isClicked = false;
     }
   }
+
+  closeMenu() {
+    this.isClicked = false;
+  }
 }
