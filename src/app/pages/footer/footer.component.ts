@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -8,13 +8,4 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 })
 export class FooterComponent {
 
-  @ViewChild('home') homeSection!: ElementRef;
-  @ViewChild('about') aboutSection!: ElementRef;
-  @ViewChild('skills') skillsSection!: ElementRef;
-  @ViewChild('projcts') projectsSection!: ElementRef;
-  @ViewChild('contact') contactSection!: ElementRef;
-
-  scrollToSection(section: ElementRef) {
-    section.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
 }

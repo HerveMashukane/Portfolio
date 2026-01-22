@@ -1,40 +1,31 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CommonModule } from '@angular/common';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
   imports: [CommonModule],
-  styleUrls: ['./navbar.component.css']
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
   isClicked = false;
-  isBrowser: boolean;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-    this.isBrowser = isPlatformBrowser(this.platformId);
-  }
-
+  constructor() {}
   ngOnInit() {
-    if (this.isBrowser) {
-      this.CheckScreenSize();
-      window.addEventListener('resize', () => this.CheckScreenSize());
-    }
+    this.checkScreenSize();
   }
 
   toggleMenu() {
     this.isClicked = !this.isClicked;
   }
 
-  autoCloseMenu() {
-    this.isClicked = false;
+  @HostListener('window:resize', [])
+  onResize() {
+    this.checkScreenSize();
   }
 
-  CheckScreenSize() {
-    if (!this.isBrowser) return;
-
-    // Example logic: close menu on large screens
-    if (window.innerWidth > 768) {
+  private checkScreenSize() {
+    if (window.innerWidth >= 768) {
       this.isClicked = false;
     }
   }
