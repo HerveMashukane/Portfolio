@@ -1,13 +1,14 @@
-# Portfolio Website
+# Developer Portfolio
 
-This is a professional portfolio website built using Angular, TypeScript, and Tailwind CSS. This site showcases my programming skills, projects, and development journey.
+This is my personal portfolio website built using Angular, TypeScript, and Tailwind CSS.
 
 ## 🚀 Features
 
-- Clean, responsive, and modern UI
-- Dynamic project showcase
-- About Me and Contact sections
-- Built with component-based architecture (Angular)
+- Clean and modern UI design
+- Responsive layout for all devices
+- Project showcase section
+- Skills and technologies overview
+- Contact section
 
 ## 🛠 Tech Stack
 
@@ -15,15 +16,18 @@ This is a professional portfolio website built using Angular, TypeScript, and Ta
 - TypeScript
 - Tailwind CSS
 
-## 📦 Getting Started
+## 🎯 Purpose
 
-1. Clone the repo  
-   ```bash
-   git clone https://github.com/HerveMashukane/Portfolio
+The portfolio highlights my frontend development skills, selected projects, and ability to build modern web applications.
 
-💡 What I Learned
+## 📸 Screenshots
 
-This project helped me deepen my understanding of component-driven development with Angular. I also enhanced my UI design skills using Tailwind CSS.
-⚠️ Challenges
+![screenshot of potfolio home](home-1.png)
+![screenshot of potfolio about](about-1.png) 
+![screenshot of potfolio skills](skills-1.png)
+![screenshot of potfolio projects](projects-1.png)
+![screenshot of potfolio contact](contact-1.png)
 
-One major challenge was resolving compilation errors during deployment, which took over a week to debug and fix. It helped me build stronger problem-solving skills and patience.
+## 📌 Notes
+
+This portfolio focuses on presenting frontend projects and technical capabilities in a professional and accessible way.

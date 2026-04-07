@@ -14,15 +14,24 @@ export class ProjectsPageComponent {
     projects: any = [
       {
         id: 1,
+        title: 'MediHelper',
+        text: 'MediHelper is a healthcare management dashboard built with Angular, TypeScript, and Tailwind CSS. It includes structured modules such as patients, doctors, appointments, billing, and administration. The platform is designed with a focus on scalability, clean UI, and efficient user workflows for managing complex systems.',
+        image: '/assets/images/medihelper.png',
+        link: 'https://medihelper-app.netlify.app/',
+        btnText: 'View Project',
+        tech: ['Angular', 'Tailwind CSS', 'TypeScript']
+      },
+      {
+        id: 2,
         title: 'AlliaStore',
-        text: 'A production Angular e-commerce app with Supabase backend, live in the market. Features authentication, role-based admin controls, and dynamic product management.',
-        image: '/assets/images/alliaStore.jpg',
+        text: 'AlliaStore is a modern e-commerce frontend application built with Angular, TypeScript, and Tailwind CSS. It features a responsive user interface, authentication flows, admin dashboard UI, and dynamic product management screens. The project focuses on delivering a clean, scalable, and user-friendly shopping experience.',
+        image: '/assets/images/alliaStore.png',
         link: 'https://allia-store.netlify.app',
         btnText: 'View Project',
         tech: ['Angular', 'Supabase', 'Tailwind CSS', 'TypeScript']
       },
       {
-        id: 2,
+        id: 3,
         title: 'Foodera',
         text: 'Interactive web app for food services, built with Angular, Tailwind CSS, and TypeScript. Features carousel for client testimonials and fully responsive design.',
         image: '/assets/images/foodieApp.png',
@@ -30,15 +39,6 @@ export class ProjectsPageComponent {
         btnText: 'View Project',
         tech: ['Angular', 'Tailwind CSS', 'TypeScript']
       },
-      {
-        id: 3,
-        title: 'HiroMate Dashboard',
-        text: 'Dynamic students dashboard with add/update/remove functionality, built using Angular, Tailwind CSS, and TypeScript. Fully responsive and interactive.',
-        image: '/assets/images/studentDashboard.png',
-        link: 'https://herve-hiromate.netlify.app/',
-        btnText: 'View Project',
-        tech: ['Angular', 'Tailwind CSS', 'TypeScript']
-      }
     ];
 
     previousProject() {
