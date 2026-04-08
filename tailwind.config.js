@@ -32,6 +32,15 @@ module.exports = {
         underlineGrow: {
           '0%': { width: '0%' },
           '100%': { width: '100%' }
+        },
+        handWave: {
+          '0%': { transform: 'rotate(0deg)' },
+          '15%': { transform: 'rotate(14deg)' },
+          '30%': { transform: 'rotate(-8deg)' },
+          '45%': { transform: 'rotate(14deg)' },
+          '60%': { transform: 'rotate(-4deg)' },
+          '75%': { transform: 'rotate(10deg)' },
+          '100%': { transform: 'rotate(0deg)' }
         }
       },
       animation: {
@@ -39,7 +48,8 @@ module.exports = {
         bounceLinkedIn: 'bounceLinkedIn 3s ease infinite',
         bounceEmail: 'bounceEmail 3s ease infinite',
         bounceGitHub: 'bounceGitHub 3s ease infinite',
-        underlineGrow: 'underlineGrow 0.3s ease forwards'
+        underlineGrow: 'underlineGrow 0.3s ease forwards',
+        handWave: 'handWave 2s ease-in-out infinite'
       }
     },
   },
