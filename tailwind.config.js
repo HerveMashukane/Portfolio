@@ -14,8 +14,8 @@ module.exports = {
       },
       keyframes: {
         pulseLogo: {
-          '0%, 90%, 100%': { transform: 'rotate(0deg)' },
-          '90%': { transform: 'rotate(360deg)' }
+          '0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 0px rgba(250, 204, 21, 0.5)' },
+          '50%': { transform: 'scale(1.1)', boxShadow: '0 0 12px rgba(250, 204, 21, 0.7)' },
         },
         bounceLinkedIn: {
           '0%, 100%': { transform: 'translateY(0)' },
@@ -44,7 +44,7 @@ module.exports = {
         }
       },
       animation: {
-        pulseLogo: 'pulseLogo 3s ease infinite',
+        pulseLogo: 'pulseLogo 2s ease-in-out infinite',
         bounceLinkedIn: 'bounceLinkedIn 3s ease infinite',
         bounceEmail: 'bounceEmail 3s ease infinite',
         bounceGitHub: 'bounceGitHub 3s ease infinite',
