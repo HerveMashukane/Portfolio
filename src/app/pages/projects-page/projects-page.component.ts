@@ -14,8 +14,10 @@ export class ProjectsPageComponent {
     projects: any = [
       {
         id: 1,
-        title: 'MediHelper',
-        text: 'MediHelper is a healthcare management dashboard built with Angular, TypeScript, and Tailwind CSS. It includes structured modules such as patients, doctors, appointments, billing, and administration. The platform is designed with a focus on scalability, clean UI, and efficient user workflows for managing complex systems.',
+        title: 'MediHelper – Healthcare Management Dashboard',
+        problem: 'Healthcare systems require structured and efficient tools to manage patients, appointments, billing, and staff operations. Many existing solutions are either too complex or lack essential features, leading to inefficiencies and suboptimal patient care.',
+        solution: 'MediHelper provides a comprehensive solution for managing healthcare operations with an intuitive interface and robust functionality.',
+        keyFeatures: ['Patient and doctor management system', 'Appointment scheduling module', 'Billing and reporting system', 'Modular dashboard architecture'],
         image: '/assets/images/medihelper.png',
         link: 'https://medihelper-app.netlify.app/',
         btnText: 'View Project',
@@ -23,8 +25,10 @@ export class ProjectsPageComponent {
       },
       {
         id: 2,
-        title: 'AlliaStore',
-        text: 'AlliaStore is a modern e-commerce frontend application built with Angular, TypeScript, and Tailwind CSS. It features a responsive user interface, authentication flows, admin dashboard UI, and dynamic product management screens. The project focuses on delivering a clean, scalable, and user-friendly shopping experience.',
+        title: 'AlliaStore – E-commerce Frontend Application',
+        problem: 'E-commerce platforms need intuitive and efficient interfaces to manage products, orders, and customer interactions. Existing solutions often lack seamless integration or fail to provide a satisfactory user experience.',
+        solution: 'AlliaStore offers a modern e-commerce frontend application with a responsive design, streamlined authentication, and comprehensive admin capabilities.',
+        keyFeatures: ['Responsive user interface', 'Authentication flows', 'Admin dashboard UI', 'Dynamic product management'],
         image: '/assets/images/alliaStore.png',
         link: 'https://allia-store.netlify.app',
         btnText: 'View Project',
@@ -32,12 +36,19 @@ export class ProjectsPageComponent {
       },
       {
         id: 3,
-        title: 'Foodera',
-        text: 'Interactive web app for food services, built with Angular, Tailwind CSS, and TypeScript. Features carousel for client testimonials and fully responsive design.',
-        image: '/assets/images/foodieApp.png',
-        link: 'https://herve-foodieapp.netlify.app/',
+        title: 'ForwardToSuccess – Education & Training Platform',
+        problem: 'Students and learners need a flexible platform to access language, digital skills, and practical courses. Existing platforms either lack hands-on experiences or are not accessible both online and offline.',
+        solution: 'ForwardToSuccess provides a hybrid learning experience with real-world training, certified instructors, and interactive features that inspire and accelerate student growth.',
+        keyFeatures: [
+          'Flexible online & offline classes',
+          'Industry-experienced trainers',
+          'Certificate-ready programs',
+          'Student testimonial carousel'
+        ],
+        image: '/assets/images/fts.png',
+        link: 'https://forward-to-success.vercel.app/',
         btnText: 'View Project',
-        tech: ['Angular', 'Tailwind CSS', 'TypeScript']
+        tech: ['React', 'TypeScript', 'Tailwind CSS']
       },
     ];
 

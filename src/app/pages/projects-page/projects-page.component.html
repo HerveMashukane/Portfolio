@@ -14,7 +14,12 @@
     <div class="flex flex-col-reverse md:flex-row items-center justify-around mt-8">
         <div class="text-left md:text-center w-full md:w-[45%] px-4 text-textPrimary">
             <h3 class="text-xl sm:text-2xl font-bold mb-4">{{ projects[currentIndex].title }}</h3>
-            <p class="mb-4 text-sm sm:text-base md:text-lg leading-relaxed">{{ projects[currentIndex].text }}</p>
+            <p class="mb-4 text-sm sm:text-base md:text-lg leading-relaxed">{{ projects[currentIndex].problem }}</p>
+            <p class="mb-4 text-sm sm:text-base md:text-lg leading-relaxed">{{ projects[currentIndex].solution }}</p>
+            <ul class="list-disc list-inside mb-4 text-sm sm:text-base md:text-lg">
+              <li *ngFor="let feature of projects[currentIndex].keyFeatures">{{ feature }}</li>
+            </ul>
+            <p class="mb-4 text-sm sm:text-base md:text-lg leading-relaxed">Tech Stack: {{ projects[currentIndex].tech.join(', ') }}</p>
             <a [href]="projects[currentIndex].link" target="_blank" class="inline-block bg-accent hover:bg-red-600 px-6 py-2 rounded-full text-white font-semibold shadow-md">
             {{ projects[currentIndex].btnText }}
             </a>
