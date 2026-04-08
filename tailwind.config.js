@@ -41,7 +41,16 @@ module.exports = {
           '60%': { transform: 'rotate(-4deg)' },
           '75%': { transform: 'rotate(10deg)' },
           '100%': { transform: 'rotate(0deg)' }
-        }
+        },
+        fadeInOut: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '10%, 90%': { opacity: '1', transform: 'translateY(0)' },
+          '100%': { opacity: '0', transform: 'translateY(20px)' },
+        },
+        fadeInOut: {
+    '0%, 100%': { opacity: 0, transform: 'translateY(20px)' },
+    '10%, 90%': { opacity: 1, transform: 'translateY(0)' }
+  },
       },
       animation: {
         pulseLogo: 'pulseLogo 2s ease-in-out infinite',
@@ -49,7 +58,9 @@ module.exports = {
         bounceEmail: 'bounceEmail 3s ease infinite',
         bounceGitHub: 'bounceGitHub 3s ease infinite',
         underlineGrow: 'underlineGrow 0.3s ease forwards',
-        handWave: 'handWave 2s ease-in-out infinite'
+        handWave: 'handWave 2s ease-in-out infinite',
+        fadeInOut: 'fadeInOut 4s ease-in-out forwards',
+        
       }
     },
   },
