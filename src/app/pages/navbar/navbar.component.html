@@ -12,11 +12,15 @@
         />
         <div class="absolute bottom-0 right-0 cursor-pointer">
           <div class="relative group">
-            <div class="w-3 h-3 bg-green-600 border-2 border-white rounded-full"></div>
+            <div 
+              class="w-3 h-3 border-2 border-white rounded-full"
+              [ngClass]="(isOnline$ | async) ? 'bg-green-500':'bg-red-500'"
+            ></div>
             <div 
               class="absolute -bottom-2 right-0 hidden group-hover:block 
-              bg-blue-500 text-white text-xs p-1 rounded-lg whitespace-nowrap shadow">
-              Online
+              text-white text-xs p-1 rounded-lg whitespace-nowrap shadow"
+              [ngClass]="(isOnline$ | async) ? 'bg-green-500':'bg-red-500'">
+              <span>{{ (isOnline$ | async) ? 'Online' : 'Offline'}}</span>
             </div>
           </div>
         </div>

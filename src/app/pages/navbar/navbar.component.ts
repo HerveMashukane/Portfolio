@@ -1,5 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
+import { fromEvent, map, merge, Observable, startWith } from 'rxjs';
+import { isPlatformBrowser } from '@angular/common';
+import { inject, PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -8,10 +11,26 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  // boolean variable to chek clicked menu
   isClicked = false;
+
+  // check if platform is a browser and connection status
+  private platformId = inject(PLATFORM_ID);
+  isOnline$!: Observable<boolean>;
 
   constructor() {}
   ngOnInit() {
+    // connection status
+    if (isPlatformBrowser(this.platformId)) {
+      this.isOnline$ = merge(
+        fromEvent(window, 'online'),
+        fromEvent(window, 'offline')
+      ).pipe(
+        map(() => navigator.onLine),
+        startWith(navigator.onLine)
+      );
+    }
+    // check screen size
     this.checkScreenSize();
   }
 
